@@ -5,6 +5,13 @@ import CreateBtn from "./CreateBtn";
 const Company = ({ state, method }) => {
 	const [name, setName] = useState("");
 	const [description, setDescription] = useState("");
+
+	const wxc = () => {
+		method([...state, { name: name, description: description }])
+		setName("")
+		setDescription("")
+	}
+
 	return (
 		<section className="company">
 			<h2>L'entreprise</h2>
@@ -14,7 +21,7 @@ const Company = ({ state, method }) => {
 				handleChange={(e) => setName(e)}
 				handleChangeDescription={(e) => setDescription(e)}
 			/>
-			<CreateBtn handleClick={() => method([...state, { name: name, description: description }])} />
+			<CreateBtn handleClick={() => wxc() } />
 		</section>
 	);
 };

@@ -1,8 +1,7 @@
-const Card = ({ name, description }) => {
+const Card = ({ name, handleClick }) => {
 	return (
-		<div className="card-skill">
+		<div onClick={() => handleClick()} className="card-skill">
 			<h2>{name}</h2>
-			<p>{description}</p>
 		</div>
 	);
 };

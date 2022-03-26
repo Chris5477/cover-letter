@@ -13,7 +13,7 @@ const Skills = ({ state, method }) => {
 	}
 
 	return (
-		<section className="skill">
+		<section className="section-form">
 			<h2>Mes compétences</h2>
 			<FormData
 				valueName={name}

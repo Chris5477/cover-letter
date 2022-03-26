@@ -1,0 +1,8 @@
+.create-data{
+    @include sizeContainer(10%, auto);
+    background-color: $create-btn;
+    color: $color-txt-second;
+    font-size: 1.4em;
+    padding: 8px 15px;
+    border: 7px;
+}

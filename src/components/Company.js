@@ -13,7 +13,7 @@ const Company = ({ state, method }) => {
 	}
 
 	return (
-		<section className="company">
+		<section className="section-form">
 			<h2>L'entreprise</h2>
 			<FormData
 				valueName={name}

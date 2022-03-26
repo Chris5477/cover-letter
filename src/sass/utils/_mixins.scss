@@ -1,0 +1,10 @@
+@mixin sizeContainer($width, $height){
+    width : $width;
+    height : $height;
+}
+
+@mixin centerELement($axisX, $axisY){
+    display: flex;
+    justify-content: $axisX;
+    align-items: $axisY;
+}

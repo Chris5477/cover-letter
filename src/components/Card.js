@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const Card = ({ name, handleClick }) => {
+const Card = ({ name, description, handleClick }) => {
+	const [tooltip, setTooltip] = useState(false);
+
 	useEffect(() => {
 		[...document.querySelectorAll(".btn-remove")].forEach((btn, index) =>
 			btn.addEventListener("click", (e) => removeCard(e, index), true)
@@ -14,11 +16,17 @@ const Card = ({ name, handleClick }) => {
 		e.stopPropagation();
 		[...document.querySelectorAll(".card")][index].remove();
 	};
+	
 
 	return (
-		<div onClick={() => handleClick()} className="card">
+		<div onMouseLeave={() =>  setTooltip(false)} onMouseEnter={() => setTooltip(true)} onClick={() => handleClick()} className="card">
 			<h2>{name}</h2>
 			<button className="btn-remove">X</button>
+			{tooltip && (
+				<div className="tooltip">
+					<p>{description}</p>
+				</div>
+			)}
 		</div>
 	);
 };

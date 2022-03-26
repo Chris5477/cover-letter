@@ -1,3 +1,18 @@
-.example-cover-letter{
-    @include sizeContainer(30%, 86vh)
+.cover-letter{
+    @include sizeContainer(30%, 86vh);
+
+    h2{
+        margin: 20px 0;
+        font-size: 1.7em;
+        text-decoration: underline;
+    }
+
+    .example-cover-letter{
+        @include sizeContainer(90%, 70vh);
+        background-color: #FFF;
+        word-wrap: break-word;
+        text-align: justify;
+        padding: 40px;
+
+    }
 }

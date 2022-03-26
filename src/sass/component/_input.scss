@@ -1,3 +1,5 @@
-input{
-    @include sizeContainer(40%, 40px);
+input {
+	@include sizeContainer(40%, 40px);
+	border-radius: 8px;
+	cursor: text;
 }

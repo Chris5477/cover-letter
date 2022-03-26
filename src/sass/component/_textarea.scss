@@ -1,3 +1,5 @@
-textarea{
-    @include sizeContainer(60%, 80px);
+textarea {
+	@include sizeContainer(60%, 80px);
+	border-radius: 8px;
+	cursor: text;
 }

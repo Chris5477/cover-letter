@@ -5,8 +5,6 @@ const FormData = ({ valueName, valueDescription, handleChange, handleChangeDescr
 			<input type="text" value={valueName} id="name" onChange={(e) => handleChange(e.target.value)} />
 			<label className="description">Description de l'information</label>
 			<textarea
-				cols={100}
-				rows={5}
 				id="description"
 				value={valueDescription}
 				onChange={(e) => handleChangeDescription(e.target.value)}

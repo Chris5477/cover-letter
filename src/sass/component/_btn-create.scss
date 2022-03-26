@@ -1,8 +1,13 @@
-.create-data{
-    @include sizeContainer(10%, auto);
-    background-color: $create-btn;
-    color: $color-txt-second;
-    font-size: 1.4em;
-    padding: 8px 15px;
-    border: 7px;
+.create-data {
+	@include sizeContainer(10%, auto);
+	background-color: $create-btn;
+	color: $color-txt-second;
+	font-size: 1.4em;
+	padding: 8px 15px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: lighten($create-btn, $amount: 15%);
+		transition: 0.4s;
+	}
 }

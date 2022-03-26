@@ -10,7 +10,6 @@ function App() {
 	const [dataCompany, setDataCompany] = useState([]);
 	const [skill, setMySkills] = useState([]);
 	const [contentLetter, setContentLetter] = useState([]);
-	console.log(contentLetter);
 
 	return (
 		<div className="App">

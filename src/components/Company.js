@@ -1,16 +1,11 @@
 import { useState } from "react";
 import FormData from "./FormData";
 import CreateBtn from "./CreateBtn";
+import { createData } from "../functions/createData";
 
 const Company = ({ state, method }) => {
 	const [name, setName] = useState("");
 	const [description, setDescription] = useState("");
-
-	const wxc = () => {
-		method([...state, { name: name, description: description }])
-		setName("")
-		setDescription("")
-	}
 
 	return (
 		<section className="section-form">
@@ -21,7 +16,7 @@ const Company = ({ state, method }) => {
 				handleChange={(e) => setName(e)}
 				handleChangeDescription={(e) => setDescription(e)}
 			/>
-			<CreateBtn handleClick={() => wxc() } />
+			<CreateBtn handleClick={() => createData(name, description, state, method, setName, setDescription)} />
 		</section>
 	);
 };

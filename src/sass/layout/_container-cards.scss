@@ -1,4 +1,5 @@
-.container{
-    @include sizeContainer(100%, 100px);
-    @include centerELement(flex-start, center);
+.container {
+	@include sizeContainer(100%, 100px);
+	@include centerELement(flex-start, center);
+	padding-left: 15px;
 }

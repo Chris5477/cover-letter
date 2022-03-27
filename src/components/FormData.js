@@ -1,13 +1,14 @@
 const FormData = ({ valueName, valueDescription, handleChange, handleChangeDescription }) => {
 	return (
 		<div className="formData">
-			<label htmlFor="name">Nom de l'information</label>
-			<input type="text" value={valueName} id="name" onChange={(e) => handleChange(e.target.value)} />
-			<label className="description">Description de l'information</label>
+			<label htmlFor="name">Nom de la carte</label>
+			<input type="text" value={valueName} id="name" onChange={(e) => handleChange(e.target.value)} placeholder="Travail d'équipe" />
+			<label className="description">Contenu de la carte</label>
 			<textarea
 				id="description"
 				value={valueDescription}
 				onChange={(e) => handleChangeDescription(e.target.value)}
+				placeholder = "Lors de mon dernier poste , j'ai su apprendre à travailler avec une équipe etc..."
 			></textarea>
 		</div>
 	);

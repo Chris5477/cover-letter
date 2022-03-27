@@ -4,6 +4,7 @@ import Data from "./components/Data";
 import { useState } from "react";
 import Card from "./components/Card";
 import CoverLetter from "./components/CoverLetter";
+import Working from "./components/Working";
 
 function App() {
 	const [data, setData] = useState([]);
@@ -14,6 +15,7 @@ function App() {
 			<Header />
 			<main>
 				<div className="forms">
+					<Working />
 					<Data state={data} method={setData} />
 				</div>
 				<div className="container">

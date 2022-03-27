@@ -9,13 +9,12 @@ import { cards } from "./utils/data/cards";
 
 function App() {
 	let getData = cards;
-	const dataStorage = JSON.parse(localStorage.getItem("Cards"))
+	const dataStorage = JSON.parse(localStorage.getItem("Cards"));
 
 	if (dataStorage) {
 		getData = dataStorage;
-	} 
+	}
 
-	
 	const [data, setData] = useState(getData);
 	const [contentLetter, setContentLetter] = useState([]);
 

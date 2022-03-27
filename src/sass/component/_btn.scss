@@ -1,5 +1,5 @@
-.create-data, .copy-btn {
-	@include sizeContainer(100px, auto);
+.create-data, .copy-btn, .save-data {
+	@include sizeContainer(auto, auto);
 	color: $color-txt-second;
 	font-size: 1.4em;
 	padding: 8px 15px;
@@ -26,6 +26,16 @@
 
 	&:hover {
 		background-color: lighten($copy-btn, $amount: 15%);
+		transition: 0.4s;
+	}
+}
+
+.save-data{
+	background-color: darken($create-btn, $amount : 15%);
+	margin-left: 20px;
+
+	&:hover {
+		background-color: lighten($create-btn, $amount: 10%);
 		transition: 0.4s;
 	}
 }

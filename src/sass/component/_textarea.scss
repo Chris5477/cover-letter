@@ -1,7 +1,9 @@
 textarea {
-	@include sizeContainer(100%, 80px);
+	@include sizeContainer(100%, 150px);
 	border-radius: 8px;
 	cursor: text;
+	font-size: 1.4em;
+	padding-left: 15px;
 
 	&::placeholder{
 		color: gray;

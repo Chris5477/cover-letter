@@ -110,15 +110,15 @@ main {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  margin: 25px 0;
+  margin: 20px 0;
 }
 .section-form .formData label {
   margin: 10px 0;
   font-size: 1.2em;
 }
 
-.create-data, .copy-btn {
-  width: 100px;
+.create-data, .copy-btn, .save-data {
+  width: auto;
   height: auto;
   color: #fff;
   font-size: 1.4em;
@@ -146,11 +146,22 @@ main {
   transition: 0.4s;
 }
 
+.save-data {
+  background-color: #132866;
+  margin-left: 20px;
+}
+.save-data:hover {
+  background-color: #2752d2;
+  transition: 0.4s;
+}
+
 input {
   width: 100%;
   height: 40px;
   border-radius: 8px;
   cursor: text;
+  font-size: 1.2em;
+  padding-left: 15px;
 }
 input::placeholder {
   color: gray;
@@ -162,9 +173,11 @@ input::placeholder {
 
 textarea {
   width: 100%;
-  height: 80px;
+  height: 150px;
   border-radius: 8px;
   cursor: text;
+  font-size: 1.4em;
+  padding-left: 15px;
 }
 textarea::placeholder {
   color: gray;

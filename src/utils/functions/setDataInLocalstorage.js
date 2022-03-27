@@ -1,3 +1,4 @@
 export const setDataInLocalstorage = (data) => {
-  return localStorage.setItem("Cards", JSON.stringify(data))
+  localStorage.setItem("Cards", JSON.stringify(data))
+  alert("Les cartes sont enregistées.")
 }

@@ -10,7 +10,7 @@ const Data = ({ state, method }) => {
 
 	return (
 		<section className="section-form">
-			<h2>L'entreprise</h2>
+			<h2>Créer une carte</h2>
 			<FormData
 				valueName={name}
 				valueDescription={description}
@@ -24,7 +24,7 @@ const Data = ({ state, method }) => {
 			/>
 
 			<Button 
-				cssClass="saveData"
+				cssClass="save-data"
 				content="Sauvegarder"
 				handleClick={() => setDataInLocalstorage(state)}
 				/>

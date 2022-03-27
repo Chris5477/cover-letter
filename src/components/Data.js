@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FormData from "./FormData";
 import CreateBtn from "./CreateBtn";
-import { createData } from "../functions/createData";
+import { createData}  from "../utils/functions/createData";
 
 const Data = ({ state, method }) => {
 	const [name, setName] = useState("");

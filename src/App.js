@@ -5,9 +5,11 @@ import { useState } from "react";
 import Card from "./components/Card";
 import CoverLetter from "./components/CoverLetter";
 import Working from "./components/Working";
+import { cards } from "./utils/data/cards";
 
 function App() {
-	const [data, setData] = useState([]);
+
+	const [data, setData] = useState(cards);
 	const [contentLetter, setContentLetter] = useState([]);
 
 	return (

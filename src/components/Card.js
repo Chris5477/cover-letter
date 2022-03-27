@@ -16,10 +16,14 @@ const Card = ({ name, description, handleClick }) => {
 		e.stopPropagation();
 		[...document.querySelectorAll(".card")][index].remove();
 	};
-	
 
 	return (
-		<div onMouseLeave={() =>  setTooltip(false)} onMouseEnter={() => setTooltip(true)} onClick={() => handleClick()} className="card">
+		<div
+			onMouseLeave={() => setTooltip(false)}
+			onMouseEnter={() => setTooltip(true)}
+			onClick={() => handleClick()}
+			className="card"
+		>
 			<h2>{name}</h2>
 			<button className="btn-remove">X</button>
 			{tooltip && (

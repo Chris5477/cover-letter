@@ -1,7 +1,7 @@
 const Button = ({cssClass, content, handleClick }) => {
 
     return(
-        <button onClick={handleClick} className={cssClass}>{content}</button>
+        <button  onClick={handleClick} className={cssClass} >{content}</button>
     )
 }
 

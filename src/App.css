@@ -118,7 +118,7 @@ main {
 }
 
 .create-data, .copy-btn {
-  width: 25%;
+  width: 100px;
   height: auto;
   color: #fff;
   font-size: 1.4em;

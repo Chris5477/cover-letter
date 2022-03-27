@@ -1,3 +1,3 @@
 export const setDataInLocalstorage = (data) => {
-   localStorage.setItem("Cards", JSON.stringify(data))
+  return localStorage.setItem("Cards", JSON.stringify(data))
 }

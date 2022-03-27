@@ -8,13 +8,14 @@ import Working from "./components/Working";
 import { cards } from "./utils/data/cards";
 
 function App() {
-	let getData = null;
-	if (JSON.parse(localStorage.getItem("Cards"))) {
-		getData = JSON.parse(localStorage.getItem("Cards"));
-	} else {
-		getData = cards;
-	}
+	let getData = cards;
+	const dataStorage = JSON.parse(localStorage.getItem("Cards"))
 
+	if (dataStorage) {
+		getData = dataStorage;
+	} 
+
+	
 	const [data, setData] = useState(getData);
 	const [contentLetter, setContentLetter] = useState([]);
 
@@ -33,6 +34,8 @@ function App() {
 							name={name}
 							description={description}
 							handleClick={() => setContentLetter(description)}
+							state={data}
+							setter={setData}
 						/>
 					))}
 				</div>

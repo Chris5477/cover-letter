@@ -1,5 +1,5 @@
 .create-data, .copy-btn {
-	@include sizeContainer(25%, auto);
+	@include sizeContainer(100px, auto);
 	color: $color-txt-second;
 	font-size: 1.4em;
 	padding: 8px 15px;

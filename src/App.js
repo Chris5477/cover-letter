@@ -8,8 +8,14 @@ import Working from "./components/Working";
 import { cards } from "./utils/data/cards";
 
 function App() {
+	let getData = null;
+	if (JSON.parse(localStorage.getItem("Cards"))) {
+		getData = JSON.parse(localStorage.getItem("Cards"));
+	} else {
+		getData = cards;
+	}
 
-	const [data, setData] = useState(cards);
+	const [data, setData] = useState(getData);
 	const [contentLetter, setContentLetter] = useState([]);
 
 	return (
@@ -22,7 +28,12 @@ function App() {
 				</div>
 				<div className="container">
 					{data.map(({ name, description }, index) => (
-						<Card key={`index ${index}`} name={name} description={description} handleClick={() => setContentLetter(description)} />
+						<Card
+							key={`index ${index}`}
+							name={name}
+							description={description}
+							handleClick={() => setContentLetter(description)}
+						/>
 					))}
 				</div>
 				<CoverLetter content={contentLetter} />

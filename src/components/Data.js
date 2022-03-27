@@ -2,6 +2,7 @@ import { useState } from "react";
 import FormData from "./FormData";
 import { createData } from "../utils/functions/createData";
 import Button from "./Button";
+import { setDataInLocalstorage } from "../utils/functions/setDataInLocalstorage";
 
 const Data = ({ state, method }) => {
 	const [name, setName] = useState("");
@@ -21,6 +22,12 @@ const Data = ({ state, method }) => {
 				content="Créer"
 				handleClick={() => createData(name, description, state, method, setName, setDescription)}
 			/>
+
+			<Button 
+				cssClass="saveData"
+				content="Sauvegarder"
+				handleClick={() => setDataInLocalstorage(state)}
+				/>
 		</section>
 	);
 };

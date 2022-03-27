@@ -1,7 +1,8 @@
 import { useState } from "react";
 import FormData from "./FormData";
 import CreateBtn from "./CreateBtn";
-import { createData}  from "../utils/functions/createData";
+import { createData } from "../utils/functions/createData";
+import Button from "./Button";
 
 const Data = ({ state, method }) => {
 	const [name, setName] = useState("");
@@ -16,7 +17,11 @@ const Data = ({ state, method }) => {
 				handleChange={(e) => setName(e)}
 				handleChangeDescription={(e) => setDescription(e)}
 			/>
-			<CreateBtn handleClick={() => createData(name, description, state, method, setName, setDescription)} />
+			<Button
+				cssClass={"create-data"}
+				content="Créer"
+				handleClick={() => createData(name, description, state, method, setName, setDescription)}
+			/>
 		</section>
 	);
 };

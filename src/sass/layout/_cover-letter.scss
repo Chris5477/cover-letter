@@ -1,5 +1,6 @@
 .cover-letter {
 	@include sizeContainer(30%, 86vh);
+	position: relative;
 
 	h2 {
 		margin: 20px 0;

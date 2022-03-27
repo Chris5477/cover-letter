@@ -1,0 +1,31 @@
+.create-data, .copy-btn {
+	@include sizeContainer(25%, auto);
+	color: $color-txt-second;
+	font-size: 1.4em;
+	padding: 8px 15px;
+	border-radius: 6px;
+	cursor: pointer;
+	
+
+}
+
+.create-data{
+	background-color: $create-btn;
+	&:hover {
+		background-color: lighten($create-btn, $amount: 15%);
+		transition: 0.4s;
+	}
+}
+
+
+.copy-btn{
+    background-color: $copy-btn;
+    position: absolute;
+    top: 2%;
+    right: 10%;
+
+	&:hover {
+		background-color: lighten($copy-btn, $amount: 15%);
+		transition: 0.4s;
+	}
+}

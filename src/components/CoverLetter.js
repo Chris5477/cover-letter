@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Button from "./Button";
 
 const CoverLetter = ({ content }) => {
 	useEffect(() => (document.querySelector(".contentLetter").innerHTML += content), [content]);
@@ -9,6 +10,7 @@ const CoverLetter = ({ content }) => {
 			<article className="example-cover-letter">
 				<p className="contentLetter"></p>
 			</article>
+			<Button handleClick={() => console.log("coucou")} cssClass={"copy-btn"} content="Copier" />
 		</section>
 	);
 };

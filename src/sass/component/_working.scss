@@ -1,0 +1,21 @@
+.working {
+	@include sizeContainer(100%, auto);
+	@include centerELement(center, flex-start);
+	flex-direction: column;
+	padding: 40px 0 0 45px;
+
+	h2 {
+		font-size: 1.7em;
+		text-decoration: underline;
+		margin-bottom: 15px;
+	}
+
+	ol {
+		padding-left: 15px;
+
+		li {
+			font-size: 1.3em;
+			margin-bottom: 8px;
+		}
+	}
+}

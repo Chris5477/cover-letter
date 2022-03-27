@@ -2,7 +2,7 @@ const FormData = ({ valueName, valueDescription, handleChange, handleChangeDescr
 	return (
 		<div className="formData">
 			<label htmlFor="name">Nom de la carte</label>
-			<input type="text" value={valueName} id="name" onChange={(e) => handleChange(e.target.value)} placeholder="Travail d'équipe" />
+			<input maxLength={26} type="text" value={valueName} id="name" onChange={(e) => handleChange(e.target.value)} placeholder="Travail d'équipe" />
 			<label className="description">Contenu de la carte</label>
 			<textarea
 				id="description"

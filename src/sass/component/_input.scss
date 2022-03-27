@@ -2,4 +2,12 @@ input {
 	@include sizeContainer(100%, 40px);
 	border-radius: 8px;
 	cursor: text;
+
+	&::placeholder{
+		color: gray;
+		padding-left: 20px;
+		font-size: 1.1em;
+		font-style: italic;
+		font-weight: 600;
+	}
 }

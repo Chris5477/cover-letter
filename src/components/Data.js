@@ -3,13 +3,13 @@ import FormData from "./FormData";
 import CreateBtn from "./CreateBtn";
 import { createData } from "../functions/createData";
 
-const Skills = ({ state, method }) => {
+const Data = ({ state, method }) => {
 	const [name, setName] = useState("");
 	const [description, setDescription] = useState("");
 
 	return (
 		<section className="section-form">
-			<h2>Mes compétences</h2>
+			<h2>L'entreprise</h2>
 			<FormData
 				valueName={name}
 				valueDescription={description}
@@ -21,4 +21,4 @@ const Skills = ({ state, method }) => {
 	);
 };
 
-export default Skills;
+export default Data;

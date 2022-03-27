@@ -9,7 +9,7 @@ const Card = ({ name, description, handleClick, state, setter }) => {
 		[...document.querySelectorAll(".btn-remove")].forEach((btn, index) =>
 			btn.addEventListener("click", (e) => removeCard(e, index, state, setter), true)
 		);
-	}, []);
+	});
 
 	return (
 		<div

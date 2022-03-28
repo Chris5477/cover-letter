@@ -5,10 +5,9 @@ import { useState } from "react";
 import Card from "./components/Card";
 import CoverLetter from "./components/CoverLetter";
 import Working from "./components/Working";
-import { cards } from "./utils/data/cards";
 
 function App() {
-	let getData = cards;
+	let getData = [];
 	const dataStorage = JSON.parse(localStorage.getItem("Cards"));
 
 	if (dataStorage) {
@@ -16,7 +15,7 @@ function App() {
 	}
 
 	const [data, setData] = useState(getData);
-	const [contentLetter, setContentLetter] = useState([]);
+	const [contentLetter, setContentLetter] = useState("");
 
 	return (
 		<div className="App">

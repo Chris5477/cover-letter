@@ -8,11 +8,10 @@
 		text-decoration: underline;
 	}
 
-	.example-cover-letter {
+	.contentLetter {
 		@include sizeContainer(90%, 70vh);
 		background-color: #fff;
 		word-wrap: break-word;
-		text-align: justify;
 		padding: 40px;
 	}
 }

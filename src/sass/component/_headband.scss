@@ -1,0 +1,56 @@
+.msg-error, .msg-success{
+    @include sizeContainer(0%, 50px);
+    @include centerELement(flex-start, center);
+    padding-left: 30px;
+    font-size: auto;
+    overflow: hidden;
+    font-weight: 400;
+    margin-top: 30px;
+    border-radius: 8px;
+    transform-origin: left;
+    opacity: 0;
+    animation: coming 6s ease-out;
+}
+
+.msg-error{
+    background-color: $error;
+    color: darken($color: $error, $amount: 40);
+}
+
+.msg-success{
+    background-color: $success;
+    color: darken($color: $success, $amount: 40);
+
+}
+
+@keyframes coming {
+
+0%{
+    width: 0;
+}
+
+10%{
+    width: 20%;
+    opacity: 1;
+}
+
+15%{
+    width: 95%;
+    opacity: 1;
+}
+
+90%{
+    width: 100%;
+    opacity: 1;
+}
+
+99%{
+    width: 5%;
+    opacity: 0;
+}
+100%{
+    width: 0%;
+}
+
+
+}

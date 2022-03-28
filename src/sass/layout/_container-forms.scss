@@ -1,5 +1,5 @@
 .forms {
-	@include sizeContainer(40%, 86vh);
+	@include sizeContainer(40%, 60vh);
 	@include centerELement(space-around, flex-start);
 	flex-direction: column;
 }

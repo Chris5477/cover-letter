@@ -2,7 +2,7 @@
   "name": "cover-letter-generator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://chris5477.github.io/cover-letter", 
+  "homepage": "http://chris5477.github.io/cover-letter",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
@@ -18,7 +18,7 @@
     "deploy": "gh-pages -d build",
     "sass": "sass --watch ./src/sass/style.scss:./src/App.css --style=compressed",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll --silent=false ",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3",
+    "react-test-renderer": "^17.0.2",
     "sass": "^1.49.9"
   }
 }

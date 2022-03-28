@@ -1,9 +1,10 @@
-export const createData = (name, description, state, method, setterOne, setteurTwo) => {
+export const createData = (name, description, state, method, setterOne, setteurTwo, setterThree) => {
     if (!name || !description) {
-        alert("Impossible de créer une donnée si le titre ou la descritpion est manquante.");
+        setterThree("error")
     } else {
         method([...state, { name: name, description: description }]);
         setterOne("");
         setteurTwo("");
+        setterThree("success-create")
     }
 };

@@ -16,6 +16,7 @@ function App() {
 
 	const [data, setData] = useState(getData);
 	const [contentLetter, setContentLetter] = useState("");
+	const [message, setMessage] = useState("");
 
 	return (
 		<div className="App">
@@ -23,7 +24,7 @@ function App() {
 			<main>
 				<div className="forms">
 					<Working />
-					<Data state={data} method={setData} />
+					<Data state={data} method={setData} message={message} setMessage={setMessage} />
 				</div>
 				<div className="container">
 					{data.map(({ name, description }, index) => (
@@ -37,7 +38,7 @@ function App() {
 						/>
 					))}
 				</div>
-				<CoverLetter content={contentLetter} />
+				<CoverLetter content={contentLetter} setMessage={setMessage} />
 			</main>
 		</div>
 	);

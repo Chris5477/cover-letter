@@ -1,8 +1,8 @@
-export const copyCoverLetter = (e) => {
+export const copyCoverLetter = (e, setter) => {
 	const element = document.querySelector(".contentLetter").value;
 	e.preventDefault();
 	navigator.clipboard
 		.writeText(element)
-
-		.then(() => alert("Texte copié"));
+		.then(() => setter("success-copy"))
+		.catch(() =>  console.error("Un problème avec la copie du texte!"))
 };

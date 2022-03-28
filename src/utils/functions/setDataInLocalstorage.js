@@ -1,4 +1,4 @@
-export const setDataInLocalstorage = (data) => {
+export const setDataInLocalstorage = (data, setter) => {
   localStorage.setItem("Cards", JSON.stringify(data))
-  alert("Les cartes sont enregistées.")
+  setter("success-save")
 }

@@ -14,6 +14,11 @@ function App() {
 		getData = dataStorage;
 	}
 
+	const isWorking = window.innerWidth > 1024 && (
+		<Working/>
+	);
+
+
 	const [data, setData] = useState(getData);
 	const [contentLetter, setContentLetter] = useState("");
 	const [message, setMessage] = useState("");
@@ -23,7 +28,7 @@ function App() {
 			<Header />
 			<main>
 				<div className="forms">
-					<Working />
+					{isWorking}
 					<Data state={data} method={setData} message={message} setMessage={setMessage} />
 				</div>
 				<div className="container">

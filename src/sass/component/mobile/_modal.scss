@@ -1,0 +1,35 @@
+.modal {
+	@include sizeContainer(100%, 100%);
+	@include centerELement(center, center);
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: $bg-modal;
+
+	.content-modal {
+		@include sizeContainer(60%, 40vh);
+		@include centerELement(center, center);
+		background-color: $bg-color-app;
+		border-radius: 40px;
+		position: relative;
+
+		.close-modal {
+			@include sizeContainer(20px, 20px);
+			@include centerELement(center, center);
+			padding: 15px;
+			position: absolute;
+			font-size: 20px;
+			top: 5%;
+			right: 5%;
+			border-radius: 20px;
+			background-color: $remove-btn;
+			color: $color-txt-second;
+			cursor: pointer;
+
+			&:hover {
+				background-color: lighten($color: $remove-btn, $amount: 20);
+				transition: 0.4s;
+			}
+		}
+	}
+}

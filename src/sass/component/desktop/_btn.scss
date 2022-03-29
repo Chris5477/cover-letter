@@ -1,6 +1,7 @@
 .create-data,
 .copy-btn,
-.save-data {
+.save-data,
+.show-working {
 	@include sizeContainer(auto, auto);
 	color: $color-txt-second;
 	font-size: 1em;
@@ -9,7 +10,7 @@
 	cursor: pointer;
 }
 
-.create-data {
+.create-data, .show-working {
 	background-color: $create-btn;
 	&:hover {
 		background-color: lighten($create-btn, $amount: 15%);
@@ -34,4 +35,10 @@
 		background-color: lighten($create-btn, $amount: 10%);
 		transition: 0.4s;
 	}
+}
+
+.show-working{
+	position: absolute;
+	top: 2%;
+	right: 5%;
 }

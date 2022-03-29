@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 
 const Headband = ({ typeMessage, setter }) => {
-	useEffect(() => setTimeout(() => setter(""), 9000), [typeMessage]);
+
+	useEffect(() => {
+		setTimeout(() => setter(""), 4000)
+		return () => clearTimeout(4000);
+	});
 
 	let classCss = null;
 	let text = null;

@@ -11,10 +11,7 @@ describe("Testing App Component", () => {
 		expect(divApp).toBeInTheDocument();
 	});
 
-	test("Should show header in web page", () => {
-		const header = document.querySelector("header");
-		expect(header).toBeInTheDocument();
-	});
+	
 
 	describe("Testing the various buttons and the display", () => {
 		test("Should show error message if inputs are empty", () => {
@@ -97,10 +94,37 @@ describe("Testing App Component", () => {
 			});
 		});
 		test.skip("Should copy content cover letter and show success message", () => {
+			
 			// const copyBtn = document.querySelector(".copy-btn");
 			// fireEvent.click(copyBtn);
 			// const message = screen.getAllByText("Les données sont enregistrées.");
 			// expect(message).toBeTruthy();
 		});
+
+		describe("Testing show working button", () => {
+
+			test("Should be display on window",() => {
+				const btn = document.querySelector(".show-working");
+				expect(btn).toBeInTheDocument()
+			})
+
+			test("Should show a modal on the click of button", () => {
+				const btn = document.querySelector(".show-working");
+				fireEvent.click(btn)
+				const modal = document.querySelector(".modal")
+				expect(modal).toBeInTheDocument()
+			})
+
+			test("Should close the modal on click on the button inside modal", () => {
+				const btn = document.querySelector(".show-working");
+				fireEvent.click(btn)
+				const btnCloseModal = document.querySelector(".close-modal")
+				fireEvent.click(btnCloseModal)
+				const modal = document.querySelector(".modal")
+				expect(modal).not.toBeInTheDocument()
+
+
+			})
+		})
 	});
 });

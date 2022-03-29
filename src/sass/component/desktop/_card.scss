@@ -1,5 +1,5 @@
 .card {
-	@include sizeContainer(auto, 1.8em);
+	@include sizeContainer(auto, 50px);
 	@include centerELement(center, center);
 	background-color: $bg-card-color;
 	border: 2px solid $border-color-card;
@@ -48,7 +48,9 @@
 	@include sizeContainer(100%, auto);
 	background-color: $bg-card-color;
 	color: $color-txt;
+	border-radius: 8px;
 	margin-top: 50px;
+	padding: 10px;
 	position: absolute;
 	top: 5%;
 	z-index: 2000;

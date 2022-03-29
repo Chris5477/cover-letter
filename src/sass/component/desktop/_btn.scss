@@ -1,15 +1,15 @@
-.create-data, .copy-btn, .save-data {
+.create-data,
+.copy-btn,
+.save-data {
 	@include sizeContainer(auto, auto);
 	color: $color-txt-second;
-	font-size: 1.4em;
-	padding: 8px 15px;
+	font-size: 1.2em;
+	padding: 8px 10px;
 	border-radius: 6px;
 	cursor: pointer;
-	
-
 }
 
-.create-data{
+.create-data {
 	background-color: $create-btn;
 	&:hover {
 		background-color: lighten($create-btn, $amount: 15%);
@@ -17,12 +17,11 @@
 	}
 }
 
-
-.copy-btn{
-    background-color: $copy-btn;
-    position: absolute;
-    top: 2%;
-    right: 10%;
+.copy-btn {
+	background-color: $copy-btn;
+	position: absolute;
+	top: 2%;
+	right: 50px;
 
 	&:hover {
 		background-color: lighten($copy-btn, $amount: 15%);
@@ -30,8 +29,8 @@
 	}
 }
 
-.save-data{
-	background-color: darken($create-btn, $amount : 15%);
+.save-data {
+	background-color: darken($create-btn, $amount: 15%);
 	margin-left: 20px;
 
 	&:hover {

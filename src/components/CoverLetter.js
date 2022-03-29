@@ -9,9 +9,11 @@ const CoverLetter = ({ content, setMessage }) => {
 
 	return (
 		<section className="cover-letter">
-			<h2>Votre lettre de motivation</h2>
+			<div className="header-letter">
+				<h2>Votre lettre de motivation</h2>
+				<Button handleClick={(e) => copyCoverLetter(e, setMessage)} cssClass={"copy-btn"} content="Copier" />
+			</div>
 			<textarea className="contentLetter"></textarea>
-			<Button handleClick={(e) => copyCoverLetter(e, setMessage)} cssClass={"copy-btn"} content="Copier" />
 		</section>
 	);
 };

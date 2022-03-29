@@ -3,7 +3,7 @@
 .save-data {
 	@include sizeContainer(auto, auto);
 	color: $color-txt-second;
-	font-size: 1.2em;
+	font-size: 1em;
 	padding: 8px 10px;
 	border-radius: 6px;
 	cursor: pointer;
@@ -19,9 +19,6 @@
 
 .copy-btn {
 	background-color: $copy-btn;
-	position: absolute;
-	top: 2%;
-	right: 50px;
 
 	&:hover {
 		background-color: lighten($copy-btn, $amount: 15%);

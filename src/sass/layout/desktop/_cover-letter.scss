@@ -1,11 +1,16 @@
 .cover-letter {
 	@include sizeContainer(30%, 86vh);
-	position: relative;
 
-	h2 {
-		margin: 20px 0;
-		font-size: 1.4em;
-		text-decoration: underline;
+	.header-letter {
+		@include sizeContainer(90%, auto);
+		@include centerELement(space-around, center);
+
+		h2 {
+			width: 90%;
+			margin: 20px 0;
+			font-size: 1em;
+			text-decoration: underline;
+		}
 	}
 
 	.contentLetter {

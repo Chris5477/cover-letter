@@ -2,10 +2,10 @@
 	@include sizeContainer(auto, 50px);
 	@include centerELement(center, center);
 	background-color: $bg-card-color;
-	border: 2px solid $border-color-card;
+	border: 3px solid $border-color-card;
 	font-size: 1.4em;
 	margin: 20px 0 0 20px;
-	padding: 0 40px;
+	padding: 0 40px 0 10px;
 	border-radius: 12px;
 	position: relative;
 	cursor: pointer;

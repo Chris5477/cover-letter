@@ -3,19 +3,19 @@
 	@include centerELement(space-around, center);
 	flex-direction: column;
 
-    h2{
-        font-size: 1em;
-    }
+	h2 {
+		font-size: 1em;
+	}
 
 	form {
 		@include sizeContainer(250px, 300px);
 		@include centerELement(space-around, center);
-        margin-top: 50px;
-        padding: 0 20px;
-		
-        label{
-            font-size: 0.8em;
-        }
+		margin-top: 50px;
+		padding: 0 20px;
+
+		label {
+			font-size: 0.8em;
+		}
 
 		input[type="submit"] {
 			@include sizeContainer(auto, 30px);

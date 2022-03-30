@@ -2,7 +2,6 @@ import { useState } from "react";
 import FormData from "./FormData";
 import { createData } from "../../utils/functions/createData";
 import Button from "../Utils/Button";
-import { setDataInLocalstorage } from "../../utils/functions/setDataInLocalstorage";
 import HeadBand from "../Utils/Headband";
 import Modal from "../Utils/Modal";
 
@@ -31,8 +30,6 @@ const Data = ({ state, method, message, setMessage }) => {
 				content="Créer"
 				handleClick={() => createData(name, description, state, method, setName, setDescription, setMessage)}
 			/>
-
-			<Button cssClass="save-data" content="Sauvegarder" handleClick={() => setDataInLocalstorage(state, setMessage)} />
 			<HeadBand typeMessage={message} setter={setMessage} />
 			{showModal && <Modal setter={setShowModal} />}
 		</section>

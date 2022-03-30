@@ -23,12 +23,6 @@ const Headband = ({ typeMessage, setter }) => {
 			break;
 		}
 
-		case "success-save": {
-			classCss = "msg-success";
-			text = "Les données sont enregistrées.";
-			break;
-		}
-
 		case "success-copy": {
 			classCss = "msg-success";
 			text = "Texte copié avec succès.";

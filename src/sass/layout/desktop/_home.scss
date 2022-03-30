@@ -1,0 +1,5 @@
+.home{
+    @include sizeContainer(100%, auto);
+    @include centerELement(center, center);
+    flex-direction: column;
+}

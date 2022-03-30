@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import Button from "./Button";
-import { copyCoverLetter } from "../utils/functions/copyCoverLetter";
+import Button from "../Utils/Button";
+import { copyCoverLetter } from "../../utils/functions/copyCoverLetter";
 
 const CoverLetter = ({ content, setMessage }) => {
 	useEffect(() => {

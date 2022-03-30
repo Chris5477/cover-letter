@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Button from "./Button";
-import { removeCard } from "../utils/functions/removeCard";
+import Button from "../Utils/Button";
+import { removeCard } from "../../utils/functions/removeCard";
 
 const Card = ({ name, description, handleClick, state, setter }) => {
 	const [tooltip, setTooltip] = useState(false);

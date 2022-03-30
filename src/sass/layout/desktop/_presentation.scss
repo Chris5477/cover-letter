@@ -1,0 +1,15 @@
+.presentation {
+	@include sizeContainer(75%, auto);
+	text-align: justify;
+
+
+	h2 {
+		font-size: 1.7em;
+		text-decoration: underline;
+	}
+
+	p {
+		font-size: 1.4em;
+		margin-top: 20px;
+	}
+}

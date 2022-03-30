@@ -1,10 +1,10 @@
 import { useState } from "react";
 import FormData from "./FormData";
-import { createData } from "../utils/functions/createData";
-import Button from "./Button";
-import { setDataInLocalstorage } from "../utils/functions/setDataInLocalstorage";
-import HeadBand from "./Headband";
-import Modal from "./Modal";
+import { createData } from "../../utils/functions/createData";
+import Button from "../Utils/Button";
+import { setDataInLocalstorage } from "../../utils/functions/setDataInLocalstorage";
+import HeadBand from "../Utils/Headband";
+import Modal from "../Utils/Modal";
 
 const Data = ({ state, method, message, setMessage }) => {
 	const isButton = window.innerWidth <= 1024 && (

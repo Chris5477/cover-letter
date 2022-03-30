@@ -1,0 +1,30 @@
+.forms-user {
+	@include sizeContainer(100%, 50vh);
+	@include centerELement(space-around, center);
+
+	form {
+		@include sizeContainer(25%, 400px);
+		@include centerELement(space-around, center);
+		flex-direction: column;
+		background-color: $bg-form-user;
+		border-radius: 12px;
+		color: $color-txt-second;
+
+		input {
+			width: 100%;
+			padding-left: 0;
+		}
+
+		input[type="submit"] {
+			@include sizeContainer(auto, 50px);
+			padding: 5px 20px;
+			cursor: pointer;
+
+			&:hover {
+				background-color: lighten($color: $bg-form-user, $amount: 10%);
+				color: $color-txt-second;
+				transition: 0.4s;
+			}
+		}
+	}
+}

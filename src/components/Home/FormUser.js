@@ -2,12 +2,9 @@ import { useState } from "react";
 import { createUser } from "../../requests/createUser";
 import { login } from "../../requests/login";
 
-
-
 const FormUser = ({ id, id2, isLogin }) => {
 	const [pseudo, setPseudo] = useState("");
 	const [password, setPassword] = useState("");
-	
 
 	let txtBtn, title, method;
 
@@ -20,7 +17,6 @@ const FormUser = ({ id, id2, isLogin }) => {
 		title = "Inscrivez-vous";
 		method = (e) => createUser(e, userID);
 	}
-
 
 	const userID = {
 		pseudo: pseudo,

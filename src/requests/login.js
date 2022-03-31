@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const login = (e, dataUser, str) => {
-    console.log(str)
+export const login = (e, dataUser) => {
+
     e.preventDefault()
     axios.post("http://localhost:3001/api/v1/user/login", {...dataUser})
     .then((user) => user.data)

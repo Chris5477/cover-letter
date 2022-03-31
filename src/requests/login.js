@@ -1,14 +1,10 @@
 import axios from "axios";
 
-export const login = (e, dataUser) => {
+export const login = (e, dataUser, str) => {
+    console.log(str)
     e.preventDefault()
     axios.post("http://localhost:3001/api/v1/user/login", {...dataUser})
-    .then((user) => {
-
-        //PROVISOIRE
-        localStorage.setItem("user", JSON.stringify(user.data))
-        window.location ="/application"
-
-    })
+    .then((user) => user.data)
+    .then(() => console.log("User connected"))
     .catch(() => console.error("Identifiants incorrects "))
 }

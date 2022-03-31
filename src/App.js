@@ -6,20 +6,17 @@ import Error from "./pages/Error";
 import Header from "./components/Utils/Header";
 
 function App() {
-
-
 	return (
 		<div className="App">
 			<Header />
-		<BrowserRouter>
-			<Routes>
-				<Route exact path={"/"} element={<Home />} />
-				<Route path={"/application"} element={<Application />} />
-				<Route element={<Error />} />
-			</Routes>
-		</BrowserRouter>
+			<BrowserRouter>
+				<Routes>
+					<Route exact path={"cover-letter/"} element={<Home />} />
+					<Route path={"/application"} element={<Application />} />
+					<Route element={<Error />} />
+				</Routes>
+			</BrowserRouter>
 		</div>
-		
 	);
 }
 

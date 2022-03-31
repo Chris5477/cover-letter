@@ -1,17 +1,18 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { createUser } from "../../requests/createUser";
 import { login } from "../../requests/login";
 
 const FormUser = ({ id, id2, isLogin }) => {
 	const [pseudo, setPseudo] = useState("");
 	const [password, setPassword] = useState("");
-
+	const dispatch = useDispatch();
 	let txtBtn, title, method;
 
 	if (isLogin) {
 		txtBtn = "Se connecter";
 		title = "Connectez-vous";
-		method = (e) => login(e, userID, "ok");
+		method = (e) => login(e, userID, dispatch);
 	} else {
 		txtBtn = "Envoyer";
 		title = "Inscrivez-vous";

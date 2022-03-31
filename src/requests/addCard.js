@@ -1,9 +1,14 @@
 import axios from "axios";
+import { pushCardInStore } from "../Redux/actionUser";
 
-export const addCard = (dataUser) => {
-    const userId = JSON.parse(localStorage.getItem("user"))
-    const id = userId.user._id
-    axios.put(`http://localhost:3001/api/v1/user/${id}`, {...dataUser })
-    .then(() => console.log("card create with success "))
-    .catch(() => console.error("Unable to create the card"))
-}
+export const addCard = (dataUser, state, dispatcher) => {
+	const { _id } = state;
+
+	axios
+		.put(`http://localhost:3001/api/v1/user/${_id}`, { ...dataUser })
+		.then(() => {
+			dispatcher(pushCardInStore(dataUser));
+			window.location.reload(); // provisoire
+		})
+		.catch(() => console.error("Unable to create the card"));
+};

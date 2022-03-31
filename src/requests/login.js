@@ -1,10 +1,16 @@
 import axios from "axios";
+import { callApi } from "../Redux/actionUser";
 
-export const login = (e, dataUser) => {
+export const login = (e, dataUser, dispatcher) => {
+	e.preventDefault();
+	axios
+		.post("http://localhost:3001/api/v1/user/login", { ...dataUser })
+		.then((user) => {
+			dispatcher(callApi(user.data, true));
+			if (user.status == 200) {
+				window.location = "/application";
+			}
+		})
 
-    e.preventDefault()
-    axios.post("http://localhost:3001/api/v1/user/login", {...dataUser})
-    .then((user) => user.data)
-    .then(() => console.log("User connected"))
-    .catch(() => console.error("Identifiants incorrects "))
-}
+		.catch(() => dispatcher(callApi("Identifiants incorrects ")));
+};

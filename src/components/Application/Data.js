@@ -4,8 +4,12 @@ import { createData } from "../../utils/functions/createData";
 import Button from "../Utils/Button";
 import HeadBand from "../Utils/Headband";
 import Modal from "../Utils/Modal";
+import { useSelector, useDispatch } from "react-redux";
 
-const Data = ({ state, method, message, setMessage }) => {
+const Data = ({ message, setMessage }) => {
+	const dataStore = useSelector((state) => state.dataUser.user);
+	const dispatch = useDispatch();
+
 	const isButton = window.innerWidth <= 1024 && (
 		<Button cssClass={"show-working"} content="Afficher" handleClick={() => setShowModal(true)} />
 	);
@@ -28,7 +32,7 @@ const Data = ({ state, method, message, setMessage }) => {
 			<Button
 				cssClass={"create-data"}
 				content="Créer"
-				handleClick={() => createData(name, description, state, method, setName, setDescription, setMessage)}
+				handleClick={() => createData(name, description, setName, setDescription, setMessage, dataStore, dispatch)}
 			/>
 			<HeadBand typeMessage={message} setter={setMessage} />
 			{showModal && <Modal setter={setShowModal} />}

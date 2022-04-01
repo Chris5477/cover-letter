@@ -8,8 +8,8 @@ import { useSelector } from "react-redux";
 const Application = () => {
 	const isWorking = window.innerWidth > 1024 && <Working />;
 	const user = useSelector((state) => state);
-	const { pseudo } = user.dataUser.user;
-	const { cards } = user;
+	console.log(user)
+	const { pseudo, cards } = user.dataUser.user
 	const [data, setData] = useState(cards);
 	const [contentLetter, setContentLetter] = useState("");
 	const [message, setMessage] = useState("");

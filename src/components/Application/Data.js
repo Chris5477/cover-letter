@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 const Data = ({ message, setMessage }) => {
 	const dataStore = useSelector((state) => state.dataUser.user);
-	const dispatch = useDispatch();
+	const dispatch = useDispatch()
 
 	const isButton = window.innerWidth <= 1024 && (
 		<Button cssClass={"show-working"} content="Afficher" handleClick={() => setShowModal(true)} />

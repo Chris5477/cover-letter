@@ -1,10 +1,9 @@
 /* istanbul ignore file */
-import { LOADING, GET_DATA_SUCCESS, ERROR_GET_DATA, ADD_CARD } from "./actionUser";
+import { LOADING, GET_DATA_SUCCESS, ERROR_GET_DATA } from "./actionUser";
 
 const initialState = {
 	loading: false,
 	dataUser: {},
-	cards: [],
 	error: "",
 };
 
@@ -32,12 +31,6 @@ export const userReducer = (state = initialState, action) => {
 				error: action.payload,
 			};
 
-		case ADD_CARD: {
-			return {
-				...state,
-				cards: [...state.cards, action.payload],
-			};
-		}
 		default:
 			return state;
 	}

@@ -12,16 +12,16 @@ function App() {
 	return (
 		<Provider store={store}>
 			<PersistGate persistor={persistor}>
-				<div className="App">
-					<Header />
-					<BrowserRouter>
+				<BrowserRouter>
+					<div className="App">
+						<Header />
 						<Routes>
-							<Route exact path={"cover-letter/"} element={<Home />} />
+							<Route exact path={"/"} element={<Home />} />
 							<Route path={"/application"} element={<Application />} />
 							<Route element={<Error />} />
 						</Routes>
-					</BrowserRouter>
-				</div>
+					</div>
+				</BrowserRouter>
 			</PersistGate>
 		</Provider>
 	);

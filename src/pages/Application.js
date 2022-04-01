@@ -16,7 +16,7 @@ const Application = () => {
 
 	useEffect(
 		() => data.length > 0 && [...document.querySelectorAll(".card")][data.length - 1].classList.add("popping"),
-		data
+		[data]
 	);
 
 	return (

@@ -1,3 +1,4 @@
+/* istanbul ignore file */ 
 export const LOADING = "LOADING";
 export const GET_DATA_SUCCESS = "GET_DATA_SUCCESS";
 export const ERROR_GET_DATA = "ERROR_GET_DATA";

@@ -4,5 +4,5 @@ export const copyCoverLetter = (e, setter) => {
 	navigator.clipboard
 		.writeText(element)
 		.then(() => setter("success-copy"))
-		.catch(() => console.error("Un problème avec la copie du texte!"));
+		.catch(() => console.log("Un problème avec la copie du texte!"));
 };

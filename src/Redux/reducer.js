@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { LOADING, GET_DATA_SUCCESS, ERROR_GET_DATA, ADD_CARD } from "./actionUser";
 
 const initialState = {

@@ -8,8 +8,8 @@ import { useSelector } from "react-redux";
 const Application = () => {
 	const isWorking = window.innerWidth > 1024 && <Working />;
 	const user = useSelector((state) => state);
-	console.log(user)
-	const { pseudo, cards } = user.dataUser.user
+	console.log(user);
+	const { pseudo, cards } = user.dataUser.user;
 	const [data, setData] = useState(cards);
 	const [contentLetter, setContentLetter] = useState("");
 	const [message, setMessage] = useState("");
@@ -25,7 +25,7 @@ const Application = () => {
 				<h2 className="greeting">Bonjour, {pseudo} </h2>
 				<div className="forms">
 					{isWorking}
-					<Data message={message} setMessage={setMessage} />
+					<Data message={message} setMessage={setMessage} setData={setData} />
 				</div>
 				<div className="container">
 					{data.map(({ name, description }, index) => (

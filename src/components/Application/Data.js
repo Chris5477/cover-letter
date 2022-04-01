@@ -6,7 +6,7 @@ import HeadBand from "../Utils/Headband";
 import Modal from "../Utils/Modal";
 import { useSelector, useDispatch } from "react-redux";
 
-const Data = ({ message, setMessage }) => {
+const Data = ({ message, setMessage, setData }) => {
 	const dataStore = useSelector((state) => state.dataUser.user);
 	const dispatch = useDispatch()
 
@@ -32,7 +32,7 @@ const Data = ({ message, setMessage }) => {
 			<Button
 				cssClass={"create-data"}
 				content="Créer"
-				handleClick={() => createData(name, description, setName, setDescription, setMessage, dataStore, dispatch)}
+				handleClick={() => createData(name, description, setName, setDescription, setMessage, setData, dataStore, dispatch)}
 			/>
 			<HeadBand typeMessage={message} setter={setMessage} />
 			{showModal && <Modal setter={setShowModal} />}

@@ -1,18 +1,18 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import { render } from "@testing-library/react";
 import App from "../App";
 
-import "@testing-library/jest-dom";
 
-describe("Testing App Component", () => {
-	beforeEach(() => render(<App />));
+describe("Testing App component", () => {
+    beforeEach(() => render(<App />))
 
-	test("Should render App component", () => {
-		const divApp = document.querySelector(".App");
-		expect(divApp).toBeInTheDocument();
-	});
+    test("Should render App component", () => {
+        const app = document.querySelector(".App")
+        expect(app).toBeInTheDocument()
+    })
 
-	test("Should render Header component", () => {
-		const header = document.querySelector("header");
-		expect(header).toBeInTheDocument();
-	});
-});
+    test("Should render header element", () => {
+        const header = document.querySelector("header")
+        expect(header).toBeInTheDocument()
+    })
+})

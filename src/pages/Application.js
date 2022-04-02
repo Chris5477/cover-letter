@@ -8,12 +8,10 @@ import { useSelector } from "react-redux";
 const Application = () => {
 	const isWorking = window.innerWidth > 1024 && <Working />;
 	const user = useSelector((state) => state);
-	console.log(user);
 	const { pseudo, cards } = user.dataUser.user;
 	const [data, setData] = useState(cards);
 	const [contentLetter, setContentLetter] = useState("");
 	const [message, setMessage] = useState("");
-
 	useEffect(
 		() => data.length > 0 && [...document.querySelectorAll(".card")][data.length - 1].classList.add("popping"),
 		[data]

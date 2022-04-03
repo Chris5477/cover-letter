@@ -6,9 +6,9 @@ const mockState = {
 	loading: false,
 	dataUser: {
 		user: {
-			_id: "6248641e1c10910b1f383873",
-			pseudo: "mockPseudo",
-			password: "mockpassword",
+			_id: "6249808fa4f1ec651154984b",
+			pseudo: "Jest",
+			password: "jest",
 			cards: [{
 				name : "HTML",
 				desription : "Concevoir une maquette"

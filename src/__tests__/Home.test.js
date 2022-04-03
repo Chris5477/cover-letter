@@ -47,8 +47,8 @@ describe("Testing Home page", () => {
 			test.skip("Should show success message if data is filled", async () => {
 				const pseudoInput = inputs[3];
 				const passwordInput = inputs[4];
-				fireEvent.change(pseudoInput, { target: { value: "test" } });
-				fireEvent.change(passwordInput, { target: { value: "test" } });
+				fireEvent.change(pseudoInput, { target: { value: "Jest" } });
+				fireEvent.change(passwordInput, { target: { value: "Jest" } });
 				const createBtn = screen.getByText("Envoyer");
 				fireEvent.click(createBtn);
 				await screen.findByText("Utilisateur créé avec succès");
@@ -73,8 +73,8 @@ describe("Testing Home page", () => {
 			test("Should show success message if data is filled", async () => {
 				const pseudoInput = inputs[0];
 				const passwordInput = inputs[1];
-				fireEvent.change(pseudoInput, { target: { value: "test" } });
-				fireEvent.change(passwordInput, { target: { value: "test" } });
+				fireEvent.change(pseudoInput, { target: { value: "Jest" } });
+				fireEvent.change(passwordInput, { target: { value: "Jest" } });
 				const createBtn = screen.getByText("Se connecter");
 				fireEvent.click(createBtn);
 				await screen.findByText("Connexion en cours");

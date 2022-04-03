@@ -1,5 +1,6 @@
 .create-data,
-.copy-btn {
+.copy-btn,
+.disconnect{
 	font-size: 0.9em;
 	padding: 4px 7px;
 }
@@ -7,4 +8,14 @@
 .copy-btn {
 	top: 4%;
 	right: 30px;
+}
+
+.disconnect {
+
+	top: 1%;
+	right: 1%;
+
+	img{
+		@include sizeContainer(15px, 15px)
+	}
 }

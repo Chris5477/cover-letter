@@ -2,13 +2,11 @@ import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
 import Error from "../pages/Error";
 
-
 describe("Testing Error page", () => {
-    test("Should render Error component", () => {
+	test("Should render Error component", () => {
+		render(<Error />);
 
-        render(<Error />)
-
-        const error = document.querySelector(".error")
-        expect(error).toBeInTheDocument()
-    })
-})
+		const error = document.querySelector(".error");
+		expect(error).toBeInTheDocument();
+	});
+});

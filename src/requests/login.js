@@ -6,6 +6,7 @@ export const login = (e, dataUser, dispatcher, setter) => {
 	axios
 		.post("http://localhost:3001/api/v1/user/login", { ...dataUser })
 		.then((user) => {
+			localStorage.setItem("token", JSON.stringify(user.data.token))
 			setter("Connexion en cours")
 			dispatcher(callApi(user.data, true));
 			if (user.status === 200) {

@@ -20,8 +20,8 @@ const Application = () => {
 	return (
 		<div className="application">
 			<main>
-				<h2 className="greeting">Bonjour, {pseudo} </h2>
 				<div className="forms">
+				<h2 className="greeting">Bonjour, {pseudo} </h2>
 					{isWorking}
 					<Data message={message} setMessage={setMessage} setData={setData} />
 				</div>

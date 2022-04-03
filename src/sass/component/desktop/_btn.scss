@@ -1,6 +1,7 @@
 .create-data,
 .copy-btn,
-.show-working {
+.show-working,
+.disconnect {
 	@include sizeContainer(auto, auto);
 	color: $color-txt-second;
 	font-size: 1em;
@@ -23,6 +24,18 @@
 
 	&:hover {
 		background-color: lighten($copy-btn, $amount: 15%);
+		transition: 0.4s;
+	}
+}
+
+.disconnect {
+	background-color: $remove-btn;
+	position: absolute;
+	right: 5%;
+	top: 5%;
+
+	&:hover {
+		background-color: lighten($remove-btn, $amount: 15%);
 		transition: 0.4s;
 	}
 }

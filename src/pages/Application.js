@@ -21,7 +21,7 @@ const Application = () => {
 		<div className="application">
 			<main>
 				<div className="forms">
-				<h2 className="greeting">Bonjour, {pseudo} </h2>
+					<h2 className="greeting">Bonjour, {pseudo} </h2>
 					{isWorking}
 					<Data message={message} setMessage={setMessage} setData={setData} />
 				</div>
@@ -32,8 +32,7 @@ const Application = () => {
 							name={name}
 							description={description}
 							handleClick={() => setContentLetter(description)}
-							state={data}
-							setter={setData}
+							setData={setData}
 						/>
 					))}
 				</div>

@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import Button from "../Utils/Button";
-import { removeCard } from "../../utils/functions/removeCard";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteCard } from "../../requests/deleteCard";
 
-const Card = ({ name, description, handleClick, state, setter }) => {
+const Card = ({ name, description, handleClick, setData }) => {
 	const [tooltip, setTooltip] = useState(false);
+	const { _id, cards } = useSelector((state) => state.dataUser.user);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		[...document.querySelectorAll(".btn-remove")].forEach((btn, index) =>
-			btn.addEventListener("click", (e) => removeCard(e, index, state, setter), true)
+			btn.addEventListener("click", (e) => deleteCard(e, _id, cards[index], dispatch, setData), true)
 		);
 	});
 

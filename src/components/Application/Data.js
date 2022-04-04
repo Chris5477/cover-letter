@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 const Data = ({ message, setMessage, setData }) => {
 	const dataStore = useSelector((state) => state.dataUser.user);
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
 	const isButton = window.innerWidth <= 1024 && (
 		<Button cssClass={"show-working"} content="Afficher" handleClick={() => setShowModal(true)} />
@@ -32,7 +32,9 @@ const Data = ({ message, setMessage, setData }) => {
 			<Button
 				cssClass={"create-data"}
 				content="Créer"
-				handleClick={() => createData(name, description, setName, setDescription, setMessage, setData, dataStore, dispatch)}
+				handleClick={() =>
+					createData(name, description, setName, setDescription, setMessage, setData, dataStore, dispatch)
+				}
 			/>
 			<HeadBand typeMessage={message} setter={setMessage} />
 			{showModal && <Modal setter={setShowModal} />}

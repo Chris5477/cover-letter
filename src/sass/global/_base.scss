@@ -7,13 +7,31 @@
 body {
 	width: 100%;
 	height: 100vh;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-		"Droid Sans", "Helvetica Neue", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background-color: $bg-color-app;
+	font-family: benchnineregular, sans-serif;
 }
 
-.no-display {
-	display: none;
+h1,
+h2,
+h3 {
+	font-family: medula_oneregular, sans-serif;
+}
+
+@font-face {
+	font-family: "medula_oneregular";
+	src: url("./assets/fonts/medulaone-regular-webfont.woff2") format("woff2"),
+		url("./assets/fonts/medulaone-regular-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "benchnineregular";
+	src: url("./assets/fonts/benchnine-regular-webfont.woff2") format("woff2"),
+		url("./assets/fonts/benchnine-regular-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+
+	.no-display {
+		display: none;
+	}
 }

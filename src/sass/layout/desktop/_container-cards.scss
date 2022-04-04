@@ -1,7 +1,0 @@
-.container {
-	@include sizeContainer(30%, 100px);
-	@include centerELement(flex-start, center);
-	flex-wrap: wrap;
-	padding-left: 15px;
-	position: relative;
-}

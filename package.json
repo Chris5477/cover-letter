@@ -22,7 +22,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "sass": "sass --watch ./src/sass/style.scss:./src/App.css --style=compressed",
+    "sass": "sass --watch ./src/sass/style.scss:./src/App.css",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll --silent=false ",
     "eject": "react-scripts eject"

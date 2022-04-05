@@ -1,5 +1,5 @@
-import Presentation from "../components/Home/Presentation";
-import FormUser from "../components/Home/FormUser";
+import Presentation from "../components/Presentation";
+import FormUser from "../components/FormUser";
 
 const Home = () => {
 	const isToken = JSON.parse(localStorage?.getItem("token"));

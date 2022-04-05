@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import back from "../assets/icon/back.svg"
-import FormUser from "../components/Home/FormUser";
+import FormUser from "../components/FormUser";
 
 const Signup = () => {
 	return (

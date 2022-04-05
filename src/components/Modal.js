@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import Button from "./Button";
-import Working from "../Application/Working";
+import Working from "./Working";
 
 const Modal = ({ setter }) => {
 	return createPortal(

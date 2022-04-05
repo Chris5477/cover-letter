@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { createUser } from "../../requests/createUser";
-import { login } from "../../requests/login";
+import { createUser } from "../requests/createUser";
+import { login } from "../requests/login";
 
 const FormUser = ({ id, id2, classCSS }) => {
 	const [pseudo, setPseudo] = useState("");

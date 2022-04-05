@@ -1,6 +1,6 @@
-import letter from "../../assets/icon/letter.svg"
-import timer from "../../assets/icon/timer.svg"
-import send from "../../assets/icon/send.svg"
+import letter from "../assets/icon/letter.svg"
+import timer from "../assets/icon/timer.svg"
+import send from "../assets/icon/send.svg"
 
 const Presentation = () => {
 	return (

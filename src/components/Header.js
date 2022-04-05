@@ -1,5 +1,5 @@
 import Button from "./Button";
-import logo from "../../assets/icon/logout.svg"
+import logo from "../assets/icon/logout.svg"
 
 const Header = () => {
 

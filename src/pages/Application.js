@@ -1,8 +1,9 @@
-import Data from "../components/Application/Data";
+import Data from "../components/Data";
 import { useState, useEffect } from "react";
-import Card from "../components/Application/Card";
-import CoverLetter from "../components/Application/CoverLetter";
-import Working from "../components/Application/Working";
+import Card from "../components/Card";
+import CoverLetter from "../components/CoverLetter";
+import Working from "../components/Working";
+import TypeCard from "../components/TypeCard";
 import { useSelector } from "react-redux";
 
 const Application = () => {
@@ -17,6 +18,11 @@ const Application = () => {
 		[data]
 	);
 
+	const structureCard = data.filter(({ type }) => type === "Stucturing");
+	const valueCard = data.filter(({ type }) => type === "Values");
+	const hardskillCard = data.filter(({ type }) => type === "hardskill");
+	const softskillCard = data.filter(({ type }) => type === "softskill");
+
 	return (
 		<div className="application">
 			<main>
@@ -26,15 +32,10 @@ const Application = () => {
 					<Data message={message} setMessage={setMessage} setData={setData} />
 				</div>
 				<div className="container">
-					{data.map(({ name, description }, index) => (
-						<Card
-							key={`index ${index}`}
-							name={name}
-							description={description}
-							handleClick={() => setContentLetter(description)}
-							setData={setData}
-						/>
-					))}
+					<TypeCard arr={structureCard} setContentLetter={setContentLetter} setData={setData} title={"Structuring"} />
+					<TypeCard arr={valueCard} setContentLetter={setContentLetter} setData={setData} title={"Values"} />
+					<TypeCard arr={hardskillCard} setContentLetter={setContentLetter} setData={setData} title={"Hardskill"} />
+					<TypeCard arr={softskillCard} setContentLetter={setContentLetter} setData={setData} title={"Softskill"} />
 				</div>
 				<CoverLetter content={contentLetter} setMessage={setMessage} />
 			</main>

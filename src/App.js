@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Application from "./pages/Application";
 import Error from "./pages/Error";
-import Header from "./components/Utils/Header";
+import Header from "./components/Header";
 import { store, persistor } from "./Redux/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";

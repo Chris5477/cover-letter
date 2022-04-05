@@ -1,17 +1,19 @@
 import { addCard } from "../../requests/addCard";
 
-export const createData = (name, description, setterOne, setteurTwo, setterThree, setterFour, state, dispatcher) => {
+export const createData = (name, description, type, setName, setDescription, setType, setMessage, setData, state, dispatcher) => {
 	const card = {
 		name: name,
 		description: description,
+		type : type
 	};
 
 	if (!name || !description) {
-		setterThree("error");
+		setMessage("error");
 	} else {
-		addCard(card, state, dispatcher, setterFour);
-		setterOne("");
-		setteurTwo("");
-		setterThree("success-create");
+		addCard(card, state, dispatcher, setData);
+		setName("");
+		setDescription("");
+		setType("")
+		setMessage("success-create");
 	}
 };

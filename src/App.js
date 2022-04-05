@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Signup from "./pages/Signup";
 import Application from "./pages/Application";
 import Error from "./pages/Error";
 import Header from "./components/Utils/Header";
@@ -17,6 +18,7 @@ function App() {
 						<Header />
 						<Routes>
 							<Route exact path={"/"} element={<Home />} />
+							<Route exact path={"/signup"} element={<Signup />} />
 							<Route path={"/application"} element={<Application />} />
 							<Route element={<Error />} />
 						</Routes>

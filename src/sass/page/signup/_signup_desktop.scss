@@ -1,0 +1,69 @@
+.signup {
+	@include sizeContainer(100%, auto);
+	@include centerELement(center, center);
+}
+
+.signup-form {
+	@include sizeContainer(30%, 50vh);
+	@include centerELement(space-around, flex-start);
+	flex-direction: column;
+	padding: 50px 20px;
+	background-color: $thirdColor;
+	margin-top: 50px;
+	border-radius: 7px;
+	box-shadow: 5px 5px 5px darken($color: $thirdColor, $amount: 10),
+		-5px -5px 5px lighten($color: $thirdColor, $amount: 10);
+	padding-left: 3%;
+
+	h2 {
+		width: 85%;
+		font-size: 3.2em;
+		color: $fourthColor;
+		font-style: italic;
+		letter-spacing: 1px;
+	}
+
+	div {
+		@include sizeContainer(80%, 10vh);
+		@include centerELement(center, flex-start);
+		flex-direction: column;
+
+		label {
+			font-size: 2em;
+			color: $fourthColor;
+			margin-bottom: 5px;
+			font-weight: 600;
+		}
+
+		input {
+			@include sizeContainer(80%, 40px);
+			color: $secondColor;
+			font-size: 1.1em;
+			padding-left: 5px;
+		}
+	}
+
+	input[type="submit"] {
+		background-color: $fourthColor;
+		color: $primaryColor;
+		font-size: 1em;
+		padding: 5px 10px;
+		border-radius: 7px;
+		cursor: pointer;
+		transform: scale(1);
+		margin: 3px 0;
+
+		&:hover {
+			transform: scale(1.1);
+			background-color: lighten($color: $fourthColor, $amount: 20);
+			transition: 0.4s;
+		}
+	}
+
+	.msg-user {
+		font-size: 1.5em;
+		font-style: italic;
+		color: $fourthColor;
+		font-weight: 600;
+	}
+}

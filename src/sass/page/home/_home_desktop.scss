@@ -2,7 +2,6 @@
 	@include sizeContainer(100%, auto);
 	@include centerELement(space-between, center);
 	flex-direction: column;
-	background-color: $bg-color;
 
 	.objectif {
 		width: 85%;

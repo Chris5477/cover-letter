@@ -8,6 +8,7 @@ body {
   width: 100%;
   height: 100vh;
   font-family: benchnineregular, sans-serif;
+  background-color: #b5c6d3;
 }
 
 h1,
@@ -59,7 +60,6 @@ header p {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  background-color: #b5c6d3;
 }
 .home .objectif {
   width: 85%;
@@ -170,6 +170,78 @@ header p {
 .explaination aside img {
   float: right;
   width: 150px;
+}
+
+.signup {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form {
+  width: 30%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 50px 20px;
+  background-color: #334756;
+  margin-top: 50px;
+  border-radius: 7px;
+  box-shadow: 5px 5px 5px #202d36, -5px -5px 5px #466176;
+  padding-left: 3%;
+}
+.signup-form h2 {
+  width: 85%;
+  font-size: 3.2em;
+  color: #F0A500;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+.signup-form div {
+  width: 80%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.signup-form div label {
+  font-size: 2em;
+  color: #F0A500;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.signup-form div input {
+  width: 80%;
+  height: 40px;
+  color: #082032;
+  font-size: 1.1em;
+  padding-left: 5px;
+}
+.signup-form input[type=submit] {
+  background-color: #F0A500;
+  color: #000000;
+  font-size: 1em;
+  padding: 5px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  transform: scale(1);
+  margin: 3px 0;
+}
+.signup-form input[type=submit]:hover {
+  transform: scale(1.1);
+  background-color: #ffcb57;
+  transition: 0.4s;
+}
+.signup-form .msg-user {
+  font-size: 1.5em;
+  font-style: italic;
+  color: #F0A500;
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=App.css.map */

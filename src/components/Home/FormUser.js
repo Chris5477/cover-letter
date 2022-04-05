@@ -4,17 +4,19 @@ import { Link } from "react-router-dom";
 import { createUser } from "../../requests/createUser";
 import { login } from "../../requests/login";
 
-const FormUser = ({ id, id2, isLogin }) => {
+const FormUser = ({ id, id2, classCSS }) => {
 	const [pseudo, setPseudo] = useState("");
 	const [password, setPassword] = useState("");
 	const [message, setMessage] = useState("")
 	const dispatch = useDispatch();
-	let txtBtn, title, method;
+	let txtBtn, title, method,link;
 
-	if (isLogin) {
+	if (classCSS === "login-form") {
 		txtBtn = "Se connecter";
 		title = "Connectez-vous";
 		method = (e) => login(e, userID, dispatch , setMessage);
+		link = <span>Pas de compte, <Link to={"/signup"}>Inscrivez-vous</Link></span>
+
 	} else {
 		txtBtn = "Envoyer";
 		title = "Inscrivez-vous";
@@ -27,7 +29,7 @@ const FormUser = ({ id, id2, isLogin }) => {
 	};
 
 	return (
-		<form className="login-form" onSubmit={(e) => method(e)}>
+		<form className={classCSS} onSubmit={(e) => method(e)}>
 			<h2>{title}</h2>
 			<div>
 				<label htmlFor={id}>Votre pseudo</label>
@@ -40,7 +42,7 @@ const FormUser = ({ id, id2, isLogin }) => {
 			</div>
 			<p className="msg-user">{message}</p>
 			<input type="submit" value={txtBtn} />
-			<span>Pas de compte, <Link to={"/signup"}>Inscrivez-vous</Link></span>
+			{link}
 		</form>
 	);
 };

@@ -1,6 +1,7 @@
 const FormData = ({ valueName, valueDescription, valueType, handleChangeName, handleChangeDescription, handleChangeType }) => {
 	return (
 		<div className="formData">
+			
 			<label htmlFor="name">Nom de la carte</label>
 			<input
 				maxLength={26}
@@ -19,8 +20,9 @@ const FormData = ({ valueName, valueDescription, valueType, handleChangeName, ha
 			></textarea>
 
 			<label htmlFor="type-card">Type de la carte</label>
-			<select onChange={(e) => handleChangeType(e.target.value)} id="type-card" value={valueType}>
-				<option value="Stucturing">Stucturation</option>
+			<select onChange={(e) => handleChangeType(e.target.value)} id="type-card" value={valueType} required>
+				<option value=""></option>
+				<option value="Structuring">Structuration</option>
 				<option value="Values">Valeurs/aspirations</option>
 				<option value="hardskill">Compétence hardskill</option>
 				<option value="softskill">Compétence transversales</option>

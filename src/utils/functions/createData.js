@@ -7,7 +7,7 @@ export const createData = (name, description, type, setName, setDescription, set
 		type : type
 	};
 
-	if (!name || !description) {
+	if (!name || !description || !type) {
 		setMessage("error");
 	} else {
 		addCard(card, state, dispatcher, setData);

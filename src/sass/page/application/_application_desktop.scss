@@ -1,0 +1,170 @@
+.application {
+	@include sizeContainer(100%, auto);
+	@include centerELement(space-between, flex-start);
+
+	.interaction-user {
+		@include sizeContainer(70%, auto);
+		@include centerELement(space-around, flex-start);
+		flex-direction: column;
+		position: relative;
+		padding-left: 20px;
+		margin-top: 20px;
+	}
+
+	.cover-letter {
+		@include sizeContainer(30%, 790px);
+		margin-top: 20px;
+	}
+}
+
+.interaction-user {
+	.section-form {
+		background-color: $thirdColor;
+		@include sizeContainer(55%, auto);
+		min-height: 790px;
+		border-radius: 8px;
+		position: relative;
+	}
+
+	.container {
+		@include sizeContainer(40%, auto);
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 0;
+		right: 2%;
+	}
+}
+
+.section-form {
+	padding-left: 25px;
+	.greeting {
+		font-size: 3.5em;
+		padding-top: 20px;
+	}
+	h3 {
+		font-size: 2em;
+		margin: 10px 0;
+	}
+
+	.formData {
+		@include sizeContainer(90%, auto);
+
+		select,
+		textarea,
+		input {
+			background-color: $bg-color;
+			font-size: 1.3em;
+			color: $secondColor;
+			margin: 15px 0;
+			border: 2px solid $fourthColor;
+			border-radius: 3px;
+		}
+
+		label {
+			font-size: 2em;
+		}
+
+		textarea {
+			@include sizeContainer(100%, 320px);
+		}
+
+		input,
+		select {
+			@include sizeContainer(100%, 30px);
+		}
+	}
+	.info-form {
+		width: 70%;
+		background-color: $fourthColor;
+		color: $secondColor;
+		font-size: 1.2em;
+		position: absolute;
+		bottom: 2%;
+		left: 12%;
+		transform: scale(0);
+		padding: 3px;
+		border-radius: 6px;
+	}
+}
+
+.container-cards {
+	@include sizeContainer(100%, auto);
+	background-color: $thirdColor;
+	margin-bottom: 10px;
+	min-height: 20vh;
+	padding: 20px 0 0 20px;
+	border-radius: 8px;
+
+	.title-section {
+		font-size: 1.8em;
+		font-style: italic;
+		margin-bottom: 10px;
+	}
+
+	.card {
+		@include sizeContainer(auto, 40px);
+		display: inline-block;
+		border: 1px solid black;
+		transform: scale(1);
+		transition: 0.1s;
+		overflow: hidden;
+		margin-right: 10px;
+		border-radius: 3px;
+
+		.header-card {
+			@include centerELement(space-between, center);
+			padding: 5px 0;
+			width: 100%;
+			padding: 5px 15px;
+
+			h2 {
+				color: $white-txt;
+			}
+
+			.btn-remove {
+				@include sizeContainer(22px, 22px);
+				@include centerELement(center, center);
+				font-size: 0.8em;
+				font-weight: bolder;
+				min-width: 0;
+				margin-left: 10px;
+			}
+		}
+
+		.tooltip {
+			background-color: $white-txt;
+			@include sizeContainer(100%, 100%);
+			padding: 10px;
+			font-size: 0.6em;
+		}
+
+		&:hover {
+			position: relative;
+			z-index: 1000;
+			height: 160px;
+			transform: scale(2);
+			transition: 0.3s;
+		}
+	}
+}
+
+.cover-letter {
+	background-color: $thirdColor;
+	border-radius: 8px;
+	@include centerELement(flex-start, center);
+	flex-direction: column;
+	.header-letter {
+		@include sizeContainer(100%, 70px);
+		@include centerELement(space-around, center);
+		h2 {
+			font-size: 2em;
+		}
+	}
+
+	textarea {
+		@include sizeContainer(90%, 88%);
+		font-size: 1.2em;
+		padding: 20px;
+	}
+}

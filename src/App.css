@@ -11,10 +11,22 @@ body {
   background-color: #b5c6d3;
 }
 
-h1,
-h2,
-h3 {
+h1 {
   font-family: medula_oneregular, sans-serif;
+  color: #FFF;
+}
+
+h2,
+h3,
+label {
+  font-family: medula_oneregular, sans-serif;
+  color: #F0A500;
+}
+
+*::placeholder {
+  color: #082032;
+  font-size: 1em;
+  padding-left: 5px;
 }
 
 @font-face {
@@ -30,6 +42,59 @@ h3 {
   font-style: normal;
   .no-display {
     display: none;
+  }
+}
+.Structuring {
+  background-color: red;
+}
+
+.Values {
+  background-color: blue;
+}
+
+.hardskill {
+  background-color: green;
+}
+
+.softskill {
+  background-color: orange;
+}
+
+.alert {
+  animation: alertUser 3.8s ease-in;
+}
+
+.popping {
+  animation: popping 0.4s ease-out;
+  transform: scale(1);
+}
+
+@keyframes alertUser {
+  0% {
+    transform: scale(0);
+  }
+  2% {
+    transform: scale(1.2);
+  }
+  95% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes popping {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  95% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 header {
@@ -51,6 +116,28 @@ header h1 {
 }
 header p {
   font-size: 1.9em;
+}
+header .disconnect {
+  margin-top: 15px;
+}
+
+button {
+  width: auto;
+  height: auto;
+  min-width: 80px;
+  background-color: #F0A500;
+  color: #082032;
+  font-weight: bolder;
+  padding: 5px 10px;
+  font-size: 1em;
+  border-radius: 8px;
+  transform: scale(1);
+  transition: 0.4s;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ffbb24;
+  transform: scale(1.1);
 }
 
 .home {
@@ -86,10 +173,6 @@ header p {
   top: 3%;
   right: 2%;
   transform: scale(1.1);
-}
-.login-form h2,
-.login-form label {
-  color: #F0A500;
 }
 .login-form h2 {
   font-size: 1.6em;
@@ -208,7 +291,6 @@ header p {
 .signup-form h2 {
   width: 85%;
   font-size: 3.2em;
-  color: #F0A500;
   font-style: italic;
   letter-spacing: 1px;
 }
@@ -222,7 +304,6 @@ header p {
 }
 .signup-form div label {
   font-size: 2em;
-  color: #F0A500;
   margin-bottom: 5px;
   font-weight: 600;
 }
@@ -253,6 +334,185 @@ header p {
   font-style: italic;
   color: #F0A500;
   font-weight: 600;
+}
+
+.application {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.application .interaction-user {
+  width: 70%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+.application .cover-letter {
+  width: 30%;
+  height: 790px;
+  margin-top: 20px;
+}
+
+.interaction-user .section-form {
+  background-color: #334756;
+  width: 55%;
+  height: auto;
+  min-height: 790px;
+  border-radius: 8px;
+  position: relative;
+}
+.interaction-user .container {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 2%;
+}
+
+.section-form {
+  padding-left: 25px;
+}
+.section-form .greeting {
+  font-size: 3.5em;
+  padding-top: 20px;
+}
+.section-form h3 {
+  font-size: 2em;
+  margin: 10px 0;
+}
+.section-form .formData {
+  width: 90%;
+  height: auto;
+}
+.section-form .formData select,
+.section-form .formData textarea,
+.section-form .formData input {
+  background-color: #b5c6d3;
+  font-size: 1.3em;
+  color: #082032;
+  margin: 15px 0;
+  border: 2px solid #F0A500;
+  border-radius: 3px;
+}
+.section-form .formData label {
+  font-size: 2em;
+}
+.section-form .formData textarea {
+  width: 100%;
+  height: 320px;
+}
+.section-form .formData input,
+.section-form .formData select {
+  width: 100%;
+  height: 30px;
+}
+.section-form .info-form {
+  width: 70%;
+  background-color: #F0A500;
+  color: #082032;
+  font-size: 1.2em;
+  position: absolute;
+  bottom: 2%;
+  left: 12%;
+  transform: scale(0);
+  padding: 3px;
+  border-radius: 6px;
+}
+
+.container-cards {
+  width: 100%;
+  height: auto;
+  background-color: #334756;
+  margin-bottom: 10px;
+  min-height: 20vh;
+  padding: 20px 0 0 20px;
+  border-radius: 8px;
+}
+.container-cards .title-section {
+  font-size: 1.8em;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.container-cards .card {
+  width: auto;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid black;
+  transform: scale(1);
+  transition: 0.1s;
+  overflow: hidden;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+.container-cards .card .header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  width: 100%;
+  padding: 5px 15px;
+}
+.container-cards .card .header-card h2 {
+  color: #FFF;
+}
+.container-cards .card .header-card .btn-remove {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  font-weight: bolder;
+  min-width: 0;
+  margin-left: 10px;
+}
+.container-cards .card .tooltip {
+  background-color: #FFF;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-size: 0.6em;
+}
+.container-cards .card:hover {
+  position: relative;
+  z-index: 1000;
+  height: 160px;
+  transform: scale(2);
+  transition: 0.3s;
+}
+
+.cover-letter {
+  background-color: #334756;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.cover-letter .header-letter {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cover-letter .header-letter h2 {
+  font-size: 2em;
+}
+.cover-letter textarea {
+  width: 90%;
+  height: 88%;
+  font-size: 1.2em;
+  padding: 20px;
 }
 
 /*# sourceMappingURL=App.css.map */

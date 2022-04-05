@@ -1,5 +1,7 @@
 @import "./utils/variables";
 @import "./utils/mixins";
 @import "./global/base";
+@import "./animation//alertUser";
+@import "./animation/popping";
 @import "./layout/desktop";
 @import "./layout/nomad";

@@ -1,0 +1,18 @@
+button{
+    @include sizeContainer(auto, auto);
+    min-width: 80px;
+    background-color: $fourthColor;
+    color: $secondColor;
+    font-weight: bolder;
+    padding: 5px 10px;
+    font-size: 1em;
+    border-radius: 8px;
+    transform: scale(1);
+    transition: 0.4s;
+    cursor: pointer;
+
+    &:hover{
+        background-color: lighten($color: $fourthColor, $amount: 10);
+        transform: scale(1.1);
+    }
+}

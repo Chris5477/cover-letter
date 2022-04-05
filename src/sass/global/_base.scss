@@ -11,10 +11,22 @@ body {
 	background-color: $bg-color;
 }
 
-h1,
-h2,
-h3 {
+h1 {
 	font-family: medula_oneregular, sans-serif;
+	color: $white-txt;
+}
+
+h2,
+h3,
+label {
+	font-family: medula_oneregular, sans-serif;
+	color: $fourthColor;
+}
+
+*::placeholder {
+	color: $secondColor;
+	font-size: 1em;
+	padding-left: 5px;
 }
 
 @font-face {
@@ -35,4 +47,29 @@ h3 {
 	.no-display {
 		display: none;
 	}
+}
+
+.Structuring {
+	background-color: $structuring;
+}
+
+.Values {
+	background-color: $values;
+}
+
+.hardskill {
+	background-color: $hardskill;
+}
+
+.softskill {
+	background-color: $softskill;
+}
+
+.alert {
+	animation: alertUser 3.8s ease-in;
+}
+
+.popping {
+	animation: popping 0.4s ease-out;
+	transform: scale(1);
 }

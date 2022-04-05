@@ -12,7 +12,7 @@ const Home = () => {
 				<Presentation />
 				<div className="forms-user">
 					<FormUser id={"pseudo-log"} id2={"password-log"} isLogin />
-					<FormUser id={"pseudo-sign"} id2={"password-sign"} />
+					{/* <FormUser id={"pseudo-sign"} id2={"password-sign"} /> */}
 				</div>
 			</div>
 		);

@@ -1,0 +1,126 @@
+.home {
+	@include sizeContainer(100%, auto);
+	@include centerELement(space-between, center);
+	flex-direction: column;
+	background-color: $bg-color;
+
+	.objectif {
+		width: 85%;
+		font-size: 3.2em;
+		color: $secondColor;
+	}
+
+	.presentation {
+		@include sizeContainer(100%, 90vh);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+}
+
+.login-form {
+	@include sizeContainer(20%, auto);
+	@include centerELement(center, flex-start);
+	flex-direction: column;
+	position: absolute;
+	top: 3%;
+	right: 2%;
+	transform: scale(1.1);
+
+	h2,
+	label {
+		color: $fourthColor;
+	}
+
+	h2 {
+		font-size: 1.6em;
+		margin-bottom: 5px;
+		font-style: italic;
+	}
+
+	label {
+		display: inline-block;
+		font-size: 1.2em;
+		font-weight: bold;
+		width: 100px;
+		margin-bottom: 10px;
+	}
+
+	div input {
+		@include sizeContainer(150px, 20px);
+		color: $secondColor;
+	}
+
+	.msg-user,
+	span,
+	a {
+		color: $white-txt;
+		font-size: 1.1em;
+		font-style: italic;
+	}
+
+	a {
+		cursor: pointer;
+		text-decoration: none;
+		margin-left: 5px;
+		&:hover {
+			color: $fourthColor;
+			transition: 0.3s;
+		}
+	}
+
+	input[type="submit"] {
+		background-color: $fourthColor;
+		color: $primaryColor;
+		font-size: 0.8em;
+		padding: 3px 4px;
+		border-radius: 7px;
+		cursor: pointer;
+		transform: scale(1);
+		margin: 3px 0;
+
+		&:hover {
+			transform: scale(1.1);
+			background-color: lighten($color: $fourthColor, $amount: 20);
+			transition: 0.4s;
+		}
+	}
+}
+
+.explaination {
+	@include sizeContainer(85%, 20vh);
+	background-color: $thirdColor;
+	position: relative;
+	border-radius: 30px;
+	box-shadow: 5px 5px 5px darken($color: $thirdColor, $amount: 10),
+		-5px -5px 5px lighten($color: $thirdColor, $amount: 10);
+
+	h2,
+	article {
+		padding: 20px 0 0 30px;
+		color: $fourthColor;
+	}
+
+	h2 {
+		font-size: 2.5em;
+	}
+
+	article {
+		width: 80%;
+		font-size: 1.9em;
+	}
+
+	aside {
+		width: 20%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 2%;
+
+		img {
+			float: right;
+			width: 150px;
+		}
+	}
+}

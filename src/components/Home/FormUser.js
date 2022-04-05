@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { createUser } from "../../requests/createUser";
 import { login } from "../../requests/login";
 
@@ -26,7 +27,7 @@ const FormUser = ({ id, id2, isLogin }) => {
 	};
 
 	return (
-		<form onSubmit={(e) => method(e)}>
+		<form className="login-form" onSubmit={(e) => method(e)}>
 			<h2>{title}</h2>
 			<div>
 				<label htmlFor={id}>Votre pseudo</label>
@@ -37,8 +38,9 @@ const FormUser = ({ id, id2, isLogin }) => {
 				<label htmlFor={id2}>Votre password</label>
 				<input onChange={(e) => setPassword(e.target.value)} id={id2} type={"password"} value={password} />
 			</div>
-			<p>{message}</p>
+			<p className="msg-user">{message}</p>
 			<input type="submit" value={txtBtn} />
+			<span>Pas de compte, <Link to={"/signup"}>Inscrivez-vous</Link></span>
 		</form>
 	);
 };

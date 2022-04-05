@@ -2,4 +2,5 @@ $primaryColor: #000000;
 $secondColor : #082032;
 $thirdColor: #334756;
 $fourthColor : #F0A500;
-$other : #F2F2F2;
+$bg-color : lighten($color: $thirdColor, $amount: 50);
+$white-txt : #FFF;

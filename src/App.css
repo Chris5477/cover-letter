@@ -541,12 +541,13 @@ button:hover {
 
   .home .objectif {
     font-size: 2.2em;
+    margin-top: 350px;
   }
   .home .presentation {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
   }
 

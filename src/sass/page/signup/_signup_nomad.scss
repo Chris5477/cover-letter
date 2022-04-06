@@ -1,0 +1,27 @@
+.signup {
+	a img {
+		width: 30px;
+		height: 30px;
+		top: 3%;
+		left: 2%;
+	}
+}
+
+.signup-form {
+	@include sizeContainer(85%, 50vh);
+	margin-top: 200px;
+
+	h2 {
+		width: 100%;
+		font-size: 2m;
+	}
+
+	div {
+		@include sizeContainer(100%, 10vh);
+
+		label {
+			font-size: 1.8em;
+			margin-bottom: 10px;
+		}
+	}
+}

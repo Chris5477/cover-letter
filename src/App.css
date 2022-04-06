@@ -157,9 +157,9 @@ button:hover {
   width: 100%;
   height: 90vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 
 .login-form {
@@ -537,6 +537,71 @@ button:hover {
     min-width: 40px;
     padding: 2px 5px;
     font-size: 0.8em;
+  }
+
+  .home .objectif {
+    font-size: 2.2em;
+  }
+  .home .presentation {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .login-form {
+    width: 80%;
+    height: auto;
+    background-color: #334756;
+    padding: 40px 10px;
+    top: 15%;
+    right: 0;
+    left: 10%;
+    border-radius: 18px;
+  }
+
+  .explaination {
+    width: 85%;
+    height: auto;
+    padding-bottom: 20px;
+    margin-top: 20px;
+  }
+  .explaination h2 {
+    font-size: 1.8em;
+  }
+  .explaination article {
+    padding-top: 10px;
+    padding-right: 20px;
+    font-size: 1.1em;
+  }
+  .explaination aside img {
+    width: 70px;
+  }
+
+  .signup a img {
+    width: 30px;
+    height: 30px;
+    top: 3%;
+    left: 2%;
+  }
+
+  .signup-form {
+    width: 85%;
+    height: 50vh;
+    margin-top: 200px;
+  }
+  .signup-form h2 {
+    width: 100%;
+    font-size: 2m;
+  }
+  .signup-form div {
+    width: 100%;
+    height: 10vh;
+  }
+  .signup-form div label {
+    font-size: 1.8em;
+    margin-bottom: 10px;
   }
 
   .application {

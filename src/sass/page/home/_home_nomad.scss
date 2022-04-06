@@ -1,0 +1,43 @@
+.home {
+	.objectif {
+		font-size: 2.2em;
+	}
+
+	.presentation {
+		@include sizeContainer(100%, 100vh);
+		@include centerELement(flex-end, center);
+	}
+}
+
+.login-form {
+	@include sizeContainer(80%, auto);
+	background-color: $thirdColor;
+	padding: 40px 10px;
+	top: 15%;
+	right: 0;
+	left: 10%;
+	border-radius: 18px;
+
+}
+
+.explaination {
+	@include sizeContainer(85%, auto);
+	padding-bottom: 20px;
+	margin-top: 20px;
+
+	h2 {
+		font-size: 1.8em;
+	}
+
+	article {
+		padding-top: 10px;
+		padding-right: 20px;
+		font-size: 1.1em;
+	}
+
+	aside {
+		img {
+			width: 70px;
+		}
+	}
+}

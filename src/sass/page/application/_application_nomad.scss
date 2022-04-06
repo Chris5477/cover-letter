@@ -1,0 +1,98 @@
+.application {
+	justify-content: flex-start;
+	flex-direction: column;
+
+	.interaction-user {
+		width: 100%;
+	}
+
+	.cover-letter {
+		@include sizeContainer(88%, auto);
+        min-height: 480px;
+        margin: auto;
+	}
+}
+
+.interaction-user {
+	.section-form {
+		background-color: $thirdColor;
+		@include sizeContainer(95%, auto);
+		min-height: 0;
+		padding-bottom: 50px;
+	}
+
+	.container {
+		@include sizeContainer(95%, auto);
+		position: initial;
+		margin: 10px 0;
+	}
+}
+
+.section-form {
+	.greeting {
+		font-size: 2em;
+	}
+	h3 {
+		font-size: 1.5em;
+	}
+
+	.formData {
+		select,
+		textarea,
+		input {
+			font-size: 1em;
+		}
+
+		label {
+			font-size: 1.4em;
+		}
+
+		textarea {
+			height: 200px;
+		}
+	}
+	.info-form {
+		font-size: 1em;
+		transform: scale(0);
+		padding: 3px;
+		left: 14%;
+	}
+}
+
+.container-cards {
+	.title-section {
+		font-size: 1.2em;
+	}
+
+	.card {
+		@include sizeContainer(auto, auto);
+		max-width: 150px;
+
+		.header-card {
+			padding: 5px;
+
+			h2 {
+				font-size: 1em;
+			}
+
+			.btn-remove {
+				@include sizeContainer(10px, 10px);
+				font-size: 0.6em;
+			}
+		}
+	}
+}
+
+.cover-letter {
+	.header-letter {
+		h2 {
+			font-size: 1.2em;
+		}
+	}
+
+	textarea {
+        height: auto;
+        min-height: 400px;
+		font-size: 0.8em;
+	}
+}

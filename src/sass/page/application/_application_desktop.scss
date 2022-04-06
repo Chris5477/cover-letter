@@ -114,7 +114,6 @@
 
 		.header-card {
 			@include centerELement(space-between, center);
-			padding: 5px 0;
 			width: 100%;
 			padding: 5px 15px;
 
@@ -123,7 +122,7 @@
 			}
 
 			.btn-remove {
-				@include sizeContainer(22px, 22px);
+				@include sizeContainer(16px, 16px);
 				@include centerELement(center, center);
 				font-size: 0.8em;
 				font-weight: bolder;

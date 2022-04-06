@@ -457,7 +457,6 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 0;
   width: 100%;
   padding: 5px 15px;
 }
@@ -465,8 +464,8 @@ button:hover {
   color: #FFF;
 }
 .container-cards .card .header-card .btn-remove {
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -513,6 +512,113 @@ button:hover {
   height: 88%;
   font-size: 1.2em;
   padding: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    padding: 20px 0;
+  }
+  header h1 {
+    font-size: 2.1em;
+  }
+  header p {
+    font-size: 0.8em;
+  }
+  header .disconnect {
+    width: 30px;
+    height: 30px;
+    min-width: 0;
+  }
+  header .disconnect img {
+    width: 70%;
+  }
+
+  button {
+    min-width: 40px;
+    padding: 2px 5px;
+    font-size: 0.8em;
+  }
+
+  .application {
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .application .interaction-user {
+    width: 100%;
+  }
+  .application .cover-letter {
+    width: 88%;
+    height: auto;
+    min-height: 480px;
+    margin: auto;
+  }
+
+  .interaction-user .section-form {
+    background-color: #334756;
+    width: 95%;
+    height: auto;
+    min-height: 0;
+    padding-bottom: 50px;
+  }
+  .interaction-user .container {
+    width: 95%;
+    height: auto;
+    position: initial;
+    margin: 10px 0;
+  }
+
+  .section-form .greeting {
+    font-size: 2em;
+  }
+  .section-form h3 {
+    font-size: 1.5em;
+  }
+  .section-form .formData select,
+.section-form .formData textarea,
+.section-form .formData input {
+    font-size: 1em;
+  }
+  .section-form .formData label {
+    font-size: 1.4em;
+  }
+  .section-form .formData textarea {
+    height: 200px;
+  }
+  .section-form .info-form {
+    font-size: 1em;
+    transform: scale(0);
+    padding: 3px;
+    left: 14%;
+  }
+
+  .container-cards .title-section {
+    font-size: 1.2em;
+  }
+  .container-cards .card {
+    width: auto;
+    height: auto;
+    max-width: 150px;
+  }
+  .container-cards .card .header-card {
+    padding: 5px;
+  }
+  .container-cards .card .header-card h2 {
+    font-size: 1em;
+  }
+  .container-cards .card .header-card .btn-remove {
+    width: 10px;
+    height: 10px;
+    font-size: 0.6em;
+  }
+
+  .cover-letter .header-letter h2 {
+    font-size: 1.2em;
+  }
+  .cover-letter textarea {
+    height: auto;
+    min-height: 400px;
+    font-size: 0.8em;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

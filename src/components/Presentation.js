@@ -5,7 +5,7 @@ import send from "../assets/icon/send.svg"
 const Presentation = () => {
 	return (
 		<div className="presentation">
-			<h2 className="objectif">Gagnez du temps pour réalisez vos lettres de motivation</h2>
+			<h2 className="objectif">Gagnez du temps pour réaliser vos lettres de motivation</h2>
 
 			<section className="explaination">
 				<h2>Créer des cartes</h2>

@@ -9,9 +9,9 @@ const Card = ({ name, description, handleClick, setData, classCSS, arr }) => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		[...document.querySelectorAll(".btn-remove")].forEach((btn, index) =>
-			btn.addEventListener("click", (e) => deleteCard(e, _id, arr[index], dispatch, setData), true)
-		);
+		[...document.querySelectorAll(`.${classCSS} .btn-remove`)].forEach((btn, index) => {
+			btn.addEventListener("click", (e) => deleteCard(e, _id, arr[index], dispatch, setData), true);
+		});
 	});
 
 	return (

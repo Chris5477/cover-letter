@@ -1,0 +1,48 @@
+.modal {
+	@include sizeContainer(100%, 100vh);
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba($color: $primaryColor, $alpha: 0.8);
+	@include centerELement(center, center);
+
+	.content-modal {
+		@include sizeContainer(60%, 40vh);
+		background-color: $thirdColor;
+		border-radius: 8px;
+		padding: 6% 0 0 10%;
+		border: 2px solid $white-txt;
+
+		h2 {
+			font-size: 2.5em;
+			color: $white-txt;
+		}
+
+		p {
+			font-size: 1.5em;
+			color: $white-txt;
+			margin: 10px 0;
+		}
+
+		button {
+			width: 100px;
+			height: 40px;
+			margin: 30px 50px 30px 0;
+			font-size: 1.2em;
+			font-weight: 600;
+			color: $primaryColor;
+
+			&:hover {
+				color: $white-txt;
+			}
+		}
+
+		.agree {
+			background-color: rgb(54, 224, 54);
+		}
+
+		.no-confirm {
+			background-color: rgb(240, 38, 38);
+		}
+	}
+}

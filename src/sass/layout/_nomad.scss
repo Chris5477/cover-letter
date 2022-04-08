@@ -1,9 +1,8 @@
-@media screen and (max-width: 1024px){
-
-    
-    @import"../component/header/header_nomad";
-    @import "../component//buttons/button_nomad";
-    @import"../page/home/home_nomad";
-    @import"../page/signup/signup_nomad";
-    @import"../page/application/application_nomad";
+@media screen and (max-width: 1024px) {
+	@import "../component/header/header_nomad";
+	@import "../component//buttons/button_nomad";
+    @import "../component//modal/modal_nomad";
+	@import "../page/home/home_nomad";
+	@import "../page/signup/signup_nomad";
+	@import "../page/application/application_nomad";
 }

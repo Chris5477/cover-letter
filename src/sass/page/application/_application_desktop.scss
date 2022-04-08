@@ -156,8 +156,8 @@
 	.header-letter {
 		@include sizeContainer(100%, 70px);
 		@include centerELement(space-around, center);
-		h2 {
-			font-size: 2em;
+		label {
+			font-size: 1.8em;
 		}
 	}
 

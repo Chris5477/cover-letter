@@ -10,10 +10,12 @@ const CoverLetter = ({ content, setMessage }) => {
 	return (
 		<section className="cover-letter">
 			<div className="header-letter">
-				<h2>Votre lettre de motivation</h2>
+				<label htmlFor="letter" className="no-visible">
+					Votre lettre de motivation
+				</label>
 				<Button handleClick={(e) => copyCoverLetter(e, setMessage)} cssClass={"copy-btn"} content="Copier" />
 			</div>
-			<textarea className="contentLetter"></textarea>
+			<textarea className="contentLetter" id="letter"></textarea>
 		</section>
 	);
 };

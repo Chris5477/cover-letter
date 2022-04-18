@@ -10,7 +10,7 @@ const CoverLetter = ({ content, setMessage }) => {
 	return (
 		<section className="cover-letter">
 			<div className="header-letter">
-				<label htmlFor="letter" className="no-visible">
+				<label htmlFor="letter">
 					Votre lettre de motivation
 				</label>
 				<Button handleClick={(e) => copyCoverLetter(e, setMessage)} cssClass={"copy-btn"} content="Copier" />

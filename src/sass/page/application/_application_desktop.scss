@@ -103,14 +103,15 @@
 	}
 
 	.card {
-		@include sizeContainer(auto, 40px);
+		@include sizeContainer(auto, auto);
 		display: inline-block;
 		border: 1px solid black;
 		transform: scale(1);
 		transition: 0.1s;
 		overflow: hidden;
 		margin-right: 10px;
-		border-radius: 3px;
+		border-radius: 6px;
+		cursor: pointer;
 
 		.header-card {
 			@include centerELement(space-between, center);

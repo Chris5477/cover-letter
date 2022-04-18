@@ -14,7 +14,7 @@ const Application = () => {
 		() => data.length > 0 && [...document.querySelectorAll(".card")][data.length - 1].classList.add("popping"),
 		[data]
 	);
-
+		
 	const structureCard = data.filter(({ type }) => type === "Structuring");
 	const valueCard = data.filter(({ type }) => type === "Values");
 	const hardskillCard = data.filter(({ type }) => type === "hardskill");

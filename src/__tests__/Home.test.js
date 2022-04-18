@@ -1,15 +1,20 @@
+import { screen, render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { fireEvent, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import Home from "../pages/Home";
+import { BrowserRouter } from "react-router-dom";
 import { store } from "../Redux/store";
+import Home from "../pages/Home";
+import Header from "../components/Header";
 
 describe("Testing Home page", () => {
 	beforeEach(() =>
 		render(
-			<Provider store={store}>
-				<Home />
-			</Provider>
+			<BrowserRouter>
+				<Provider store={store}>
+					<Header />
+					<Home />
+				</Provider>
+			</BrowserRouter>
 		)
 	);
 
@@ -18,69 +23,32 @@ describe("Testing Home page", () => {
 		expect(home).toBeInTheDocument();
 	});
 
-	test("Should render the title of Prensentation component", () => {
-		const title = screen.getAllByText("Gagnez du temps pour réalisez vos lettres de motivation");
-		expect(title).toBeTruthy();
-	});
-
 	describe("Testing FormUser component", () => {
-		test("Should render FormUser component", () => {
-			const formOne = document.getElementById("pseudo-log");
-			const formTwo = document.getElementById("pseudo-sign");
-			expect(formOne).toBeInTheDocument();
-			expect(formTwo).toBeInTheDocument();
-		});
+		let inputs;
+		beforeEach(() => inputs = [...document.querySelectorAll("input")] )
+		 
 
-		describe("Testing createUser form", () => {
-			let inputs;
+		test("Should render form-login component", () => {
+			const formUser = document.querySelector(".login-form")
+			expect(formUser).toBeInTheDocument()
+		})
 
-			beforeEach(() => (inputs = [...document.querySelectorAll("input")]));
+		test("Should return an error message if IDs not match", async() => {
+			fireEvent.change(inputs[0], {target : { value : "pseudo"}})
+			fireEvent.change(inputs[1], {target : { value : "mdp"}})
+			const createBtn = inputs[2]
+			fireEvent.click(createBtn)
+			const txt = await screen.findByText("Identifiants incorrects")
+			expect(txt).toBeTruthy()
+		})
 
-			test("Should show error message if submitted data is empty", async () => {
-				const createBtn = screen.getByText("Envoyer");
-				fireEvent.click(createBtn);
-				await screen.findByText("Utilisateur non créé");
-				const text = screen.getByText("Utilisateur non créé");
-				expect(text).toBeTruthy();
-			});
-
-			test.skip("Should show success message if data is filled", async () => {
-				const pseudoInput = inputs[3];
-				const passwordInput = inputs[4];
-				fireEvent.change(pseudoInput, { target: { value: "Jest" } });
-				fireEvent.change(passwordInput, { target: { value: "Jest" } });
-				const createBtn = screen.getByText("Envoyer");
-				fireEvent.click(createBtn);
-				await screen.findByText("Utilisateur créé avec succès");
-				const text = screen.getByText("Utilisateur créé avec succès");
-				expect(text).toBeTruthy();
-			});
-		});
-
-		describe("Testing login form", () => {
-			let inputs;
-
-			beforeEach(() => (inputs = [...document.querySelectorAll("input")]));
-
-			test("Should show error message if submitted data is empty", async () => {
-				const loginBtn = screen.getByText("Se connecter");
-				fireEvent.click(loginBtn);
-				await screen.findByText("Identifiants incorrects");
-				const text = screen.getByText("Identifiants incorrects");
-				expect(text).toBeTruthy();
-			});
-
-			test("Should show success message if data is filled", async () => {
-				const pseudoInput = inputs[0];
-				const passwordInput = inputs[1];
-				fireEvent.change(pseudoInput, { target: { value: "Jest" } });
-				fireEvent.change(passwordInput, { target: { value: "Jest" } });
-				const createBtn = screen.getByText("Se connecter");
-				fireEvent.click(createBtn);
-				await screen.findByText("Connexion en cours");
-				const text = screen.getByText("Connexion en cours");
-				expect(text).toBeTruthy();
-			});
-		});
-	});
+		test("Should return a succes message if IDs match", async() => {
+			fireEvent.change(inputs[0], {target : { value : "testjest"}})
+			fireEvent.change(inputs[1], {target : { value : "testjest"}})
+			const createBtn = inputs[2]
+			fireEvent.click(createBtn)
+			const txt = await screen.findByText("Connexion en cours")
+			expect(txt).toBeTruthy()
+		})
+	})
 });

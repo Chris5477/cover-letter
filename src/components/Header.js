@@ -8,7 +8,7 @@ const Header = () => {
 	const [showModal, setShowModal] = useState(false);
 
 	const contentBtn = window.innerWidth >= 1024 ? "Déconnexion" : <img src={logo} alt="logo logout" />;
-
+	
 	return (
 		<header>
 			<h1>Ma lettre de motivation</h1>

@@ -2,9 +2,9 @@ import axios from "axios";
 import {logOut} from "../utils/functions/logout"
 
 export const deleteUser = (id) => {
-    console.log(id)
-    const token = JSON.parse(localStorage.getItem("token"))
 
+    const token = JSON.parse(localStorage.getItem("token"))
+    console.log(token)
     axios({
         method : "delete",
         url : `http://localhost:3001/api/v1/user/${id}`,

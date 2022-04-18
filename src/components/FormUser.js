@@ -44,7 +44,7 @@ const FormUser = ({ id, id2, classCSS }) => {
 					id={id}
 					type={"text"}
 					value={pseudo}
-					minLength="6"
+					minLength="4"
 					required
 				/>
 			</div>

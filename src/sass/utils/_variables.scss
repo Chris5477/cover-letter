@@ -1,11 +1,14 @@
 $primaryColor: #000000;
-$secondColor : #082032;
+$secondColor: #082032;
 $thirdColor: #334756;
-$fourthColor : #F0A500;
-$bg-color : lighten($color: $thirdColor, $amount: 50);
-$white-txt : #FFF;
+$fourthColor: #f0a500;
+$bg-color: lighten(
+	$color: $thirdColor,
+	$amount: 50,
+);
+$white-txt: #fff;
 
-$structuring : red;
-$values : blue;
-$hardskill : green;
-$softskill : orange
+$structuring: linear-gradient(149deg, rgba(0, 0, 0, 1) 0%, rgba(189, 0, 0, 1) 100%);
+$values: linear-gradient(149deg, rgba(0, 0, 0, 1) 0%, rgba(0, 83, 189, 1) 100%);
+$hardskill: linear-gradient(149deg, rgba(0, 0, 0, 1) 0%, rgba(32, 189, 0, 1) 100%);
+$softskill: linear-gradient(149deg, rgba(0, 0, 0, 1) 0%, rgba(189, 123, 0, 1) 100%);

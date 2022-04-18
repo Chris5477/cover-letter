@@ -6,13 +6,16 @@ const mockState = {
 	loading: false,
 	dataUser: {
 		user: {
-			_id: "6249808fa4f1ec651154984b",
-			pseudo: "Jest",
-			password: "jest",
-			cards: [{
-				name : "HTML",
-				desription : "Concevoir une maquette"
-			}],
+			_id: "62549216e1d085c64b53fa48",
+			pseudo: "pseudo",
+			password: "motdepasse",
+			cards: [
+				{
+					name: "HTML",
+					description: "Concevoir une maquette",
+					type : "Structuring"
+				},
+			],
 		},
 	},
 	error: "",
@@ -47,4 +50,4 @@ export const mockReducer = (state = mockState, action) => {
 	}
 };
 
-                export const store = createStore(mockReducer, applyMiddleware(thunk));
+export const store = createStore(mockReducer, applyMiddleware(thunk));

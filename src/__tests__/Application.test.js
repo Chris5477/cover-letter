@@ -1,127 +1,87 @@
+import { screen, render, fireEvent, findByText } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { findByText, fireEvent, render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import Application from "../pages/Application";
+import { BrowserRouter } from "react-router-dom";
 import { store } from "../__mocks__/mockStore";
+import Application from "../pages/Application";
+import { deleteUser } from "../requests/deleteUser";
+import Header from "../components/Header";
+import App from "../App";
 
 describe("Testing Application page", () => {
-	beforeEach(() =>
+	beforeEach(() => {
 		render(
 			<Provider store={store}>
 				<Application />
 			</Provider>
-		)
-	);
+		);
+	});
 
-	test("Should render Application Component", () => {
+	test("Should render Application page ", () => {
 		const application = document.querySelector(".application");
 		expect(application).toBeInTheDocument();
 	});
 
-	describe("Testing Modal component", () => {
-		let showBtn;
-		beforeEach(() => {
-			showBtn = screen.getByText("Afficher");
-			fireEvent.click(showBtn);
-		});
-		test("Should render Modal component", () => {
-			const modal = document.querySelector(".modal");
-			expect(modal).toBeInTheDocument();
-		});
-
-		test("Should close the modal on the click of button", () => {
-			const modal = document.querySelector(".modal");
-			const closeBtn = document.querySelector(".close-modal");
-			fireEvent.click(closeBtn);
-			expect(modal).not.toBeInTheDocument();
-		});
-	});
-
 	describe("Testing FormData component", () => {
-		let input, textarea;
+		let createBtn, input, textarea, select;
 		beforeEach(() => {
-			input = document.getElementById("name");
-			textarea = document.getElementById("description");
+			input = document.querySelector("input");
+			textarea = document.querySelector("textarea");
+			select = document.querySelector("select");
+			createBtn = document.querySelector(".create-data");
 		});
 
-		test("Should show error message if submitted data is empty", async () => {
-			const createBtn = document.querySelector(".create-data");
+		test("Should return an error message if one field is empty", async () => {
 			fireEvent.click(createBtn);
-			await screen.findByText("Veuillez remplir tous les champs du formulaire !");
-			const msg = screen.getAllByText("Veuillez remplir tous les champs du formulaire !");
-			expect(msg).toBeTruthy();
+			const txt = await screen.findByText("Veuillez remplir tous les champs du formulaire !");
+			expect(txt).toBeTruthy();
 		});
 
-		test("Should show success message if data is filled", async () => {
-			fireEvent.change(input, { target: { value: "HTML" } });
-			fireEvent.change(textarea, { target: { value: "TEST HTML" } });
-			const createBtn = document.querySelector(".create-data");
+		test("Should return a succes message if the fields are fill", async () => {
+			fireEvent.change(input, { target: { value: "html" } });
+			fireEvent.change(textarea, { target: { value: "htmlhtmlhtml" } });
+			fireEvent.change(select, { target: { value: "Values" } });
 			fireEvent.click(createBtn);
-			await screen.findByText("Carte créée avec succès.");
-			const msg = screen.getAllByText("Carte créée avec succès.");
-			expect(msg).toBeTruthy();
+			const txt = await screen.findByText("Carte créée avec succès.");
+			expect(txt).toBeTruthy();
 		});
 
-		test.skip("Should create a new card ", async () => {
-			fireEvent.change(input, { target: { value: "CSS" } });
-			fireEvent.change(textarea, { target: { value: "TEST CSS" } });
-			const createBtn = document.querySelector(".create-data");
-			fireEvent.click(createBtn);
-			await screen.findByText("CSS");
-			const newCard = screen.getAllByText("CSS");
-			expect(newCard).toBeTruthy();
-		});
-	});
+		describe("Testing Card component", () => {
+			let card;
+			beforeEach(() => (card = document.querySelector(".card")));
 
-	describe("Testing CoverLetter component", () => {
-		test("Should render CoverLetter component", () => {
-			const coverletter = document.querySelector(".cover-letter");
-			expect(coverletter).toBeInTheDocument();
-		});
-
-		test("Should copy the text inside coverletter", async () => {
-			Object.defineProperty(navigator, "clipboard", {
-				value: {
-					writeText: jest.fn().mockReturnValue(Promise.resolve("HELLO wORLD")),
-				},
+			test("Sould be render Card component", () => {
+				expect(card).toBeInTheDocument();
 			});
 
-			const copyBtn = document.querySelector(".copy-btn");
-			fireEvent.click(copyBtn);
-			expect(navigator.clipboard.writeText).toBeCalledTimes(1);
-		});
-	});
+			test("Should show a tooltip if user hover the card", () => {
+				fireEvent.mouseEnter(card);
+				const tooltip = document.querySelector(".tooltip");
+				expect(tooltip).toBeInTheDocument();
+				fireEvent.mouseLeave(card);
+				expect(tooltip).not.toBeInTheDocument();
+			});
 
-	describe("Testing Card component", () => {
-		let card;
-		beforeEach(() => (card = document.querySelector(".card")));
+            test("Should write in coverLetter on the click on card", () => {
+                fireEvent.click(card)
+                const coverletter = document.querySelector(".contentLetter")
+                expect(coverletter.value).toBe("Concevoir une maquette")
+            })
 
-		test("Should render Card component", () => {
-			expect(card).toBeInTheDocument();
-		});
+            test("Should copy the content of cover letter in the clipboard", () => {
+                Object.defineProperty(navigator, "clipboard", {
+                    value: {
+                        writeText: jest.fn().mockReturnValue(Promise.resolve("HELLO WORLD")),
+                    },
+                });
 
-		test("Should write in the cover letter by clicking on the card", () => {
-			fireEvent.click(card);
-			const coverletter = document.querySelector(".contentLetter");
-			expect(coverletter.value).toBe("TEST HTML");
-		});
+                const btnCopy = document.querySelector(".copy-btn")
+                fireEvent.click(btnCopy)
+                expect(navigator.clipboard.writeText).toBeCalledTimes(1)
+    
+            })
 
-		test("Should show a tooltip when hovering over the card", () => {
-			fireEvent.mouseEnter(card);
-			const tooltip = document.querySelector(".tooltip");
-			expect(tooltip).toBeInTheDocument();
-		});
-
-		test("Should not display a tooltip when no longer hovering over the card", () => {
-			fireEvent.mouseLeave(card);
-			const tooltip = document.querySelector(".tooltip");
-			expect(tooltip).toBeNull();
-		});
-
-		test("Should remove card by  clicking on the button", () => {
-			const removeBtn = document.querySelector(".btn-remove");
-			fireEvent.click(removeBtn);
-			expect(card).not.toBeInTheDocument();
+		
 		});
 	});
 });
